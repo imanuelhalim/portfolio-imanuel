@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./style/index.scss";
 import LoadingPage from "./Loading-Page";
 import * as serviceWorker from "./serviceWorker";
 

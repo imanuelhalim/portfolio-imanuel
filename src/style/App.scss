@@ -65,15 +65,15 @@ h1 {
 
 h2 {
   font-family: $title;
-  font-size: 30px;
+  font-size: 34px;
   text-decoration: underline;
   font-weight: 500;
   text-align: center;
-  @media only screen and (min-width: 600px) and (max-width: 959px) {
-    font-size: 26px;
+  @media only screen and (min-width: 600px) and (max-width: 768px) {
+    font-size: 30px;
   }
   @media only screen and (max-width: 599px) {
-    font-size: 24px;
+    font-size: 26px;
   }
 }
 
@@ -107,26 +107,17 @@ span {
   width: 1280px;
   min-width: 1280px;
   margin: 0 auto;
-  @media only screen and (min-width: 768px) and (max-width: 959px) {
+  @media only screen and (min-width: 769px) and (max-width: 959px) {
     min-width: 768px;
     max-width: 959px;
   }
-  @media only screen and (min-width: 600px) and (max-width: 767px) {
-    min-width: 600px;
+  @media only screen and (min-width: 480px) and (max-width: 768px) {
+    min-width: 480px;
     max-width: 767px;
   }
-  @media only screen and (min-width: 480px) and (max-width: 599px) {
-    min-width: 599px;
-    max-width: 480px;
-  }
-  @media only screen and (min-width: 379px) and (max-width: 479px) {
+  @media only screen and (max-width: 479px) {
     min-width: 379px;
     max-width: 479px;
-  }
-  @media only screen and (max-width: 378px) {
-    min-width: 378px;
-    max-width: 378px;
-    margin: 0 auto;
   }
   .wrapper {
     padding: 0 48px;
@@ -161,6 +152,9 @@ span {
               @media only screen and (min-width: 768px) and (max-width: 959px) {
                 font-size: 30px;
               }
+              @media only screen and (min-width: 480px) and (max-width: 768px) {
+                font-size: 30px;
+              }
               @media only screen and (min-width: 379px) and (max-width: 479px) {
                 font-size: 20px;
               }
@@ -175,12 +169,18 @@ span {
                 @media only screen and (min-width: 768px) and (max-width: 959px) {
                   font-size: 30px;
                 }
-                @media only screen and (min-width: 379px) and (max-width: 479px) {
+                @media only screen and (min-width: 480px) and (max-width: 768px) {
+                  font-size: 30px;
+                }
+                // @media only screen and (min-width: 379px) and (max-width: 479px) {
+                //   font-size: 20px;
+                // }
+                @media only screen and (max-width: 479px) {
                   font-size: 20px;
                 }
-                @media only screen and (max-width: 378px) {
-                  font-size: 20px;
-                }
+                // @media only screen and (max-width: 378px) {
+                //   font-size: 20px;
+                // }
               }
             }
             button.left-button.btn.btn-primary {
@@ -327,7 +327,7 @@ span {
                 font-size: 20px;
               }
             }
-            @media only screen and (min-width: 379px) and (max-width: 600px) {
+            @media only screen and (min-width: 379px) and (max-width: 767px) {
               .about-title {
                 font-size: 28px;
               }
@@ -392,7 +392,7 @@ span {
                   }
                 }
               }
-              @media only screen and (max-width: 479px) {
+              @media only screen and (max-width: 767px) {
                 width: 200px;
                 font-size: 14px;
                 svg {
@@ -417,7 +417,7 @@ span {
               @media only screen and (min-width: 768px) and (max-width: 959px) {
                 font-size: 30px;
               }
-              @media only screen and (max-width: 600px) {
+              @media only screen and (max-width: 767px) {
                 font-size: 26px;
                 margin-top: 30px;
               }
@@ -516,8 +516,11 @@ span {
                 text-align: center;
                 border: 1px solid $blueGrey;
                 img.card-img.kasihproject {
-                  height: 120px;
-                  max-width: auto;
+                  height: auto;
+                  max-width: 300px;
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
                 }
                 img.card-img.stressdetoxmelb {
                   height: auto;
@@ -669,13 +672,13 @@ span {
                 display: grid;
                 grid-template-columns: auto auto;
                 .about-content-list-left li {
-                  font-size: 18px;
+                  font-size: 16px;
                   margin-right: -200px;
                   list-style-type: none;
                   font-family: $button;
                 }
                 .about-content-list-right li {
-                  font-size: 18px;
+                  font-size: 16px;
                   margin-left: -200px;
                   list-style-type: none;
                   font-family: $button;
@@ -716,7 +719,7 @@ span {
                 display: grid;
                 grid-template-columns: auto auto;
                 .about-content-list-left li {
-                  font-size: 16px;
+                  font-size: 14px;
                   margin-right: -20px;
                   list-style-type: none;
                   font-family: $button;
@@ -724,7 +727,7 @@ span {
                   margin-left: 60px;
                 }
                 .about-content-list-right li {
-                  font-size: 16px;
+                  font-size: 14px;
                   list-style-type: none;
                   font-family: $button;
                   text-align: left;
@@ -758,61 +761,62 @@ span {
           .wrapper-projects-contents {
             padding: 0 0 100px 0;
             .projects-contents-container {
-              margin-top: 50px;
-              .project-contents-wrapper {
-                padding-bottom: 10px;
+              margin-top: 30px;
 
-                // .sub-position {
-                //   padding-top: 10px;
-                //   text-align: left;
-                //   font-family: $title;
-                //   ul li {
-                //     margin-left: 30px;
-                //   }
-                // }
-                // .sub-logo {
-                //   padding-top: 10px;
-                //   text-align: right;
-                // }
-                // @media only screen and (min-width: 768px) and (max-width: 959px) {
-                //   .sub-title {
-                //     font-size: 22px;
-                //   }
-                //   .sub-period {
-                //     font-size: 22px;
-                //   }
-                // }
-                // @media only screen and (min-width: 600px) and (max-width: 767px) {
-                //   .sub-title {
-                //     font-size: 18px;
-                //   }
-                //   .sub-period {
-                //     font-size: 18px;
-                //   }
-                //   .sub-position {
-                //     .platform-list li {
-                //       list-style-type: none;
-                //       padding: 0 15px 0 0;
-                //     }
-                //   }
-                // }
-                // @media only screen and (min-width: 480px) and (max-width: 599px) {
-                //   .sub-title {
-                //     font-size: 16px;
-                //   }
-                //   .sub-period {
-                //     font-size: 16px;
-                //   }
-                // }
-                // @media only screen and (min-width: 360px) and (max-width: 479px) {
-                //   .sub-title {
-                //     font-size: 14px;
-                //   }
-                //   .sub-period {
-                //     font-size: 14px;
-                //   }
-                // }
-              }
+              // .projects-contents-wrapper {
+              // margin-bottom: 10px;
+
+              // .sub-position {
+              //   padding-top: 10px;
+              //   text-align: left;
+              //   font-family: $title;
+              //   ul li {
+              //     margin-left: 30px;
+              //   }
+              // }
+              // .sub-logo {
+              //   padding-top: 10px;
+              //   text-align: right;
+              // }
+              // @media only screen and (min-width: 768px) and (max-width: 959px) {
+              //   .sub-title {
+              //     font-size: 22px;
+              //   }
+              //   .sub-period {
+              //     font-size: 22px;
+              //   }
+              // }
+              // @media only screen and (min-width: 600px) and (max-width: 767px) {
+              //   .sub-title {
+              //     font-size: 18px;
+              //   }
+              //   .sub-period {
+              //     font-size: 18px;
+              //   }
+              //   .sub-position {
+              //     .platform-list li {
+              //       list-style-type: none;
+              //       padding: 0 15px 0 0;
+              //     }
+              //   }
+              // }
+              // @media only screen and (min-width: 480px) and (max-width: 599px) {
+              //   .sub-title {
+              //     font-size: 16px;
+              //   }
+              //   .sub-period {
+              //     font-size: 16px;
+              //   }
+              // }
+              // @media only screen and (min-width: 360px) and (max-width: 479px) {
+              //   .sub-title {
+              //     font-size: 14px;
+              //   }
+              //   .sub-period {
+              //     font-size: 14px;
+              //   }
+              // }
+              // }
               // .platforms {
               //   display: block;
               //   width: 100%;
@@ -839,12 +843,12 @@ span {
               }
               .sub-title {
                 text-align: left;
-                font-size: 24px;
+                font-size: 22px;
                 font-family: $title;
               }
               .sub-period {
                 text-align: right;
-                font-size: 24px;
+                font-size: 22px;
                 font-family: $title;
               }
               a#left-tabs-example-tab-first.nav-link,
@@ -889,7 +893,7 @@ span {
                 background-color: $blueGrey;
                 color: $black;
                 border: 1px solid $brightGrey;
-                font-size: 18px;
+                font-size: 14px;
               }
               div.sub-title-mobile.row {
                 text-align: left;
@@ -948,6 +952,7 @@ span {
                 display: block;
                 border: 1px solid $blueGrey;
                 width: 100%;
+                margin-top: 20px;
               }
               // @media only screen and (min-width: 768px) and (max-width: 959px) {
               //   .sub-title {
@@ -1021,7 +1026,7 @@ span {
       }
       @media only screen and (min-width: 768px) and (max-width: 959px) {
         .footer-content {
-          font-size: 141px;
+          font-size: 14px;
         }
         .list-social-media li {
           height: 40px;
@@ -1299,7 +1304,7 @@ header {
               font-size: 1.2rem;
             }
             .overview-menu {
-              color: $white;
+              color: $blueGrey;
             }
           }
         }

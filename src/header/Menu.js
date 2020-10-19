@@ -1,6 +1,25 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
+
+const { useEffect, useState } = React;
+
+function useWindowSize() {
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  return windowSize;
+}
 
 const Menu = ({ state }) => {
   const defaultTitle = "Hi,";
@@ -13,6 +32,7 @@ const Menu = ({ state }) => {
   const [changeStyle, setChangeStyle] = useState([]);
   const [contentsText, setContentsText] = useState(defaultContentsText);
 
+  const widthScreenSize = useWindowSize();
   //var for dom nodes
   let menu = useRef(null);
   let revealMenuBackground = useRef(null);
@@ -198,6 +218,12 @@ const Menu = ({ state }) => {
     setContentsText(defaultContentsText);
   };
 
+  const handleDisplay = (widthScreenSize) => {
+    if (widthScreenSize > 959) {
+      return displayInfo();
+    }
+  };
+
   return (
     <div
       ref={(el) => {
@@ -314,7 +340,7 @@ const Menu = ({ state }) => {
                 }}
                 className="info"
               >
-                {displayInfo()}
+                {handleDisplay(widthScreenSize)}
               </div>
               <div className="contents">
                 Document:

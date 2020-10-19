@@ -1,5 +1,12 @@
 import React from "react";
-import { Nav, Tab, Row, Col } from "react-bootstrap";
+import {
+  TabContainer,
+  Row,
+  Col,
+  Nav,
+  TabContent,
+  TabPane,
+} from "react-bootstrap";
 
 const { useEffect, useState } = React;
 
@@ -172,9 +179,7 @@ const Projects = () => {
     if (professional.length != 0 && listName === "Professional") {
       return (
         <div className="wrapper-projects-contents">
-          <div className="project-contents-title">
-            <h2>Professional</h2>
-          </div>
+          <h2>Professional</h2>
           {professional.map((text, value) => {
             if (professional.length > 1 && text.no != professional.length) {
               return (
@@ -196,9 +201,7 @@ const Projects = () => {
     } else if (volunteering.length != 0 && listName === "Volunteering") {
       return (
         <div className="wrapper-projects-contents">
-          <div className="project-contents-title">
-            <h2>Volunteering</h2>
-          </div>
+          <h2>Volunteering</h2>
           {volunteering.map((text, value) => {
             if (volunteering.length > 1 && text.no != volunteering.length) {
               return (
@@ -265,29 +268,29 @@ const Projects = () => {
             </Nav>
           </Col>
           <Col sm={9}>
-            <Tab.Content>
-              <Tab.Pane eventKey="first">
+            <TabContent>
+              <TabPane eventKey="first">
                 <ul>
                   {text.responsibility.map((result) => {
                     return <li key={result}>{result}</li>;
                   })}
                 </ul>
-              </Tab.Pane>
-              <Tab.Pane eventKey="second">
+              </TabPane>
+              <TabPane eventKey="second">
                 <ul className="platform-list">
                   {text.platforms.map((result) => {
                     return <li key={result}>{result}</li>;
                   })}
                 </ul>
-              </Tab.Pane>
-              <Tab.Pane eventKey="third">
+              </TabPane>
+              <TabPane eventKey="third">
                 <ul>
                   {text.projectOutcome.map((result) => {
                     return <li key={result}>{result}</li>;
                   })}
                 </ul>
-              </Tab.Pane>
-            </Tab.Content>
+              </TabPane>
+            </TabContent>
           </Col>
         </Row>
       );
@@ -311,22 +314,22 @@ const Projects = () => {
               </Nav.Link>
             </Nav.Item>
           </Nav>
-          <Tab.Content className="tab-content-mobile">
-            <Tab.Pane className="tab-pane-mobile" eventKey="first">
+          <TabContent className="tab-content-mobile">
+            <TabPane className="tab-pane-mobile" eventKey="first">
               <ul>
                 {text.responsibility.map((result) => {
                   return <li key={result}>{result}</li>;
                 })}
               </ul>
-            </Tab.Pane>
-            <Tab.Pane className="tab-pane-mobile" eventKey="second">
+            </TabPane>
+            <TabPane className="tab-pane-mobile" eventKey="second">
               <ul className="platform-list">
                 {text.platforms.map((result) => {
                   return <li key={result}>{result}</li>;
                 })}
               </ul>
-            </Tab.Pane>
-            <Tab.Pane className="tab-pane-mobile" eventKey="third">
+            </TabPane>
+            <TabPane className="tab-pane-mobile" eventKey="third">
               <ul>
                 {text.projectOutcome.map((result) => {
                   return (
@@ -341,8 +344,8 @@ const Projects = () => {
                   );
                 })}
               </ul>
-            </Tab.Pane>
-          </Tab.Content>
+            </TabPane>
+          </TabContent>
         </Row>
       );
     }
@@ -351,11 +354,10 @@ const Projects = () => {
   const positionSection = (text, status) => {
     return (
       <>
-        <div className="project-contents-wrapper"></div>
-        <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+        <TabContainer id="left-tabs-example" defaultActiveKey="first">
           {handleDisplay(widthScreenSize, text, "first-section")}
           {handleDisplay(widthScreenSize, text, "second-section")}
-        </Tab.Container>
+        </TabContainer>
       </>
     );
   };

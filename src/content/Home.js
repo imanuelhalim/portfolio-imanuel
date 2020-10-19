@@ -93,7 +93,7 @@ const Home = () => {
   };
 
   const handleButtonHomeSec = (widthScreenSize) => {
-    if (widthScreenSize > 768) {
+    if (widthScreenSize >= 768) {
       return (
         <>
           <SmoothLink smooth={true} duration={1000} to="about">
@@ -172,7 +172,7 @@ const Home = () => {
   };
 
   const handleProjectBox = () => {
-    if (widthScreenSize >= 768) {
+    if (widthScreenSize > 768) {
       return (
         <div className="projects-box">
           <Row>
@@ -323,7 +323,7 @@ const Home = () => {
           </Row>
         </div>
       );
-    } else if (widthScreenSize < 768) {
+    } else if (widthScreenSize <= 768) {
       return (
         <div className="projects-box">
           <Card>
