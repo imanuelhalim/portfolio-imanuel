@@ -1,0 +1,38 @@
+.loading-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  svg {
+    height: 100px;
+    #h-word {
+      animation: alphabet 2s infinite linear;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+  }
+}
+
+@keyframes alphabet {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+// #circle {
+//   animation: alphabet 2s infinite linear;
+//   transform-origin: center;
+//   transform-box: fill-box;
+// }
+
+// @keyframes circ {
+//   from {
+//     transform: rotateY(0deg);
+//   }
+//   to {
+//     transform: rotateY(360deg);
+//   }
+// }
