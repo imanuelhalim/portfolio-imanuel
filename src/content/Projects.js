@@ -286,7 +286,16 @@ const Projects = () => {
               <TabPane eventKey="third">
                 <ul>
                   {text.projectOutcome.map((result) => {
-                    return <li key={result}>{result}</li>;
+                    return (
+                      <li
+                        key={result}
+                        onClick={() => {
+                          window.open(`${result}`, "_blank");
+                        }}
+                      >
+                        {result}
+                      </li>
+                    );
                   })}
                 </ul>
               </TabPane>

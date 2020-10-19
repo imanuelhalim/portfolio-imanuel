@@ -762,82 +762,6 @@ span {
             padding: 0 0 100px 0;
             .projects-contents-container {
               margin-top: 30px;
-
-              // .projects-contents-wrapper {
-              // margin-bottom: 10px;
-
-              // .sub-position {
-              //   padding-top: 10px;
-              //   text-align: left;
-              //   font-family: $title;
-              //   ul li {
-              //     margin-left: 30px;
-              //   }
-              // }
-              // .sub-logo {
-              //   padding-top: 10px;
-              //   text-align: right;
-              // }
-              // @media only screen and (min-width: 768px) and (max-width: 959px) {
-              //   .sub-title {
-              //     font-size: 22px;
-              //   }
-              //   .sub-period {
-              //     font-size: 22px;
-              //   }
-              // }
-              // @media only screen and (min-width: 600px) and (max-width: 767px) {
-              //   .sub-title {
-              //     font-size: 18px;
-              //   }
-              //   .sub-period {
-              //     font-size: 18px;
-              //   }
-              //   .sub-position {
-              //     .platform-list li {
-              //       list-style-type: none;
-              //       padding: 0 15px 0 0;
-              //     }
-              //   }
-              // }
-              // @media only screen and (min-width: 480px) and (max-width: 599px) {
-              //   .sub-title {
-              //     font-size: 16px;
-              //   }
-              //   .sub-period {
-              //     font-size: 16px;
-              //   }
-              // }
-              // @media only screen and (min-width: 360px) and (max-width: 479px) {
-              //   .sub-title {
-              //     font-size: 14px;
-              //   }
-              //   .sub-period {
-              //     font-size: 14px;
-              //   }
-              // }
-              // }
-              // .platforms {
-              //   display: block;
-              //   width: 100%;
-              //   .platform-list li {
-              //     font-family: $button;
-              //     list-style-type: none;
-              //     float: left;
-              //     padding: 0 15px 0 0;
-              //   }
-              // }
-              // .outcomes {
-              //   display: block;
-              //   .outcomes-title {
-              //     font-family: $sub-title;
-              //     font-size: 20px;
-              //   }
-              //   .outcomes-content li {
-              //     text-align: left;
-              //     list-style-type: none;
-              //   }
-              // }
               div.title-period.row {
                 margin-bottom: 20px;
               }
@@ -893,7 +817,7 @@ span {
                 background-color: $blueGrey;
                 color: $black;
                 border: 1px solid $brightGrey;
-                font-size: 14px;
+                font-size: 18px;
               }
               div.sub-title-mobile.row {
                 text-align: left;
