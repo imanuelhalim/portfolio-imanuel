@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0f2773e9.chunk.css",
+    "main.js": "/static/js/main.bf96bc8e.chunk.js",
+    "main.js.map": "/static/js/main.bf96bc8e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.84808ba7.js",
+    "runtime-main.js.map": "/static/js/runtime-main.84808ba7.js.map",
+    "static/css/2.70e35f80.chunk.css": "/static/css/2.70e35f80.chunk.css",
+    "static/js/2.1b60ab4a.chunk.js": "/static/js/2.1b60ab4a.chunk.js",
+    "static/js/2.1b60ab4a.chunk.js.map": "/static/js/2.1b60ab4a.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.c4a054cfaf86cbf4200a95d7821422e4.js": "/precache-manifest.c4a054cfaf86cbf4200a95d7821422e4.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.70e35f80.chunk.css.map": "/static/css/2.70e35f80.chunk.css.map",
+    "static/css/main.0f2773e9.chunk.css.map": "/static/css/main.0f2773e9.chunk.css.map",
+    "static/js/2.1b60ab4a.chunk.js.LICENSE.txt": "/static/js/2.1b60ab4a.chunk.js.LICENSE.txt",
+    "static/media/Auto Repair Logo.webp": "/static/media/Auto Repair Logo.8149d180.webp",
+    "static/media/Dr Ashir Ahmed Logo.webp": "/static/media/Dr Ashir Ahmed Logo.56ed2b28.webp",
+    "static/media/Kasih Project Logo.webp": "/static/media/Kasih Project Logo.0c9b3c1b.webp",
+    "static/media/NutMeld Logo.webp": "/static/media/NutMeld Logo.018ebada.webp",
+    "static/media/PPE2U Logo.webp": "/static/media/PPE2U Logo.66897ab2.webp",
+    "static/media/Stress Detox Melbourne Logo.webp": "/static/media/Stress Detox Melbourne Logo.887cf6cf.webp",
+    "static/media/imanuelhalim-logo.svg": "/static/media/imanuelhalim-logo.7f09ffe2.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.84808ba7.js",
+    "static/css/2.70e35f80.chunk.css",
+    "static/js/2.1b60ab4a.chunk.js",
+    "static/css/main.0f2773e9.chunk.css",
+    "static/js/main.bf96bc8e.chunk.js"
+  ]
+}
