@@ -1,9 +1,12 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import { FaFacebookSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 // import { FaInstagram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { FaPuzzlePiece } from "react-icons/fa"
 import { FaGithubSquare } from "react-icons/fa";
+
 
 const { useEffect, useState } = React;
 
@@ -46,7 +49,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-content">
-        Designed and Built by Imanuel Halim &#169; 2020
+        Designed and Built by Imanuel Halim &#169; 2021
       </div>
       <ul className="list-social-media">
         <li>
@@ -87,6 +90,14 @@ const Footer = () => {
             onClick={() => {
               window.open(`${linkedin}`, "_blank");
             }}
+          />
+        </li>
+        <li>
+          <FaPuzzlePiece
+            size={iconSize}
+            onClick={() => {
+              window.open(`${linkedin}`, "_blank");
+            }}  
           />
         </li>
       </ul>
