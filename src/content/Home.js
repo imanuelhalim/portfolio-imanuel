@@ -210,7 +210,7 @@ const Home = () => {
           <Row>
             {createColumn(KasihProjectImage, "Kasih Project-Logo", "Kasih Project", "A non-profit organization that supports individuals regardless of age, disability, religious, or ethnic group.", "https://kasihproject.org.au")}
             {createColumn(StressDetoxImage, "Stress Detox Melbourne-Logo", "Stress Detox Melbourne", "Human transformation courses help releasing stress from the inner most layers of human consciousness., disability, religious, or ethnic group.", "https://stressdetoxmelb.com.au")}
-            {createColumn(StressDetoxImage, "Stress Detox Melbourne-Logo", "Stress Detox Melbourne", "Human transformation courses help releasing stress from the inner most layers of human consciousness., disability, religious, or ethnic group.", "https://stressdetoxmelb.com.au")}
+            {/* {createColumn(StressDetoxImage, "Stress Detox Melbourne-Logo", "Stress Detox Melbourne", "Human transformation courses help releasing stress from the inner most layers of human consciousness., disability, religious, or ethnic group.", "https://stressdetoxmelb.com.au")} */}
             {/* <Col>
               <Flippy flipOnHover={true}>
                 <FrontSide className="front-side">
