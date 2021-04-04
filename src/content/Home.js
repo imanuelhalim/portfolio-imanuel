@@ -5,10 +5,15 @@ import {
   FaAngleDoubleDown,
   FaRegSmile,
   FaRegSmileWink,
+  FaCoffee,
 } from "react-icons/fa";
 import { GrProjects } from "react-icons/gr";
 import { RiCodeBoxLine } from "react-icons/ri";
 import Flippy, { FrontSide, BackSide } from "react-flippy";
+import HashtagCoffee from "../images/Hashtag-Coffee.webp";
+import InfaAustralia from "../images/Infa-australia.webp";
+import ComfortLilydale from "../images/Comfort Logo.webp";
+import JBGRecordsImage from "../images/JBG-logo-wide.webp";
 import KasihProjectImage from "../images/Kasih Project Logo.webp";
 import StressDetoxImage from "../images/Stress Detox Melbourne Logo.webp";
 import PPE2UImage from "../images/PPE2U Logo.webp";
@@ -171,12 +176,42 @@ const Home = () => {
     }
   };
 
+  const createColumn = (imgSrc, imgSrcAlt, subTitle, subDesc, websiteLink) => {
+    return(
+    <Col>
+      <Flippy flipOnHover={true}>
+        <FrontSide className="front-side">
+          <img src={imgSrc} alt={imgSrcAlt} />
+        </FrontSide>
+        <BackSide className="back-side">
+          <div className="sub-title">{subTitle}</div>
+          <div className="sub-description">
+            {subDesc}
+          </div>
+          <div className="div-sub-link">
+            <Button
+              onClick={() => {
+                window.open(websiteLink, "_blank");
+              }}
+            >
+              Visit Website
+            </Button>
+          </div>
+        </BackSide>
+      </Flippy>
+    </Col>
+    );
+  }
+
   const handleProjectBox = () => {
     if (widthScreenSize > 768) {
       return (
         <div className="projects-box">
           <Row>
-            <Col>
+            {createColumn(KasihProjectImage, "Kasih Project-Logo", "Kasih Project", "A non-profit organization that supports individuals regardless of age, disability, religious, or ethnic group.", "https://kasihproject.org.au")}
+            {createColumn(StressDetoxImage, "Stress Detox Melbourne-Logo", "Stress Detox Melbourne", "Human transformation courses help releasing stress from the inner most layers of human consciousness., disability, religious, or ethnic group.", "https://stressdetoxmelb.com.au")}
+            {createColumn(StressDetoxImage, "Stress Detox Melbourne-Logo", "Stress Detox Melbourne", "Human transformation courses help releasing stress from the inner most layers of human consciousness., disability, religious, or ethnic group.", "https://stressdetoxmelb.com.au")}
+            {/* <Col>
               <Flippy flipOnHover={true}>
                 <FrontSide className="front-side">
                   <img src={KasihProjectImage} alt="Kasih Project-Logo" />
@@ -184,7 +219,7 @@ const Home = () => {
                 <BackSide className="back-side">
                   <div className="sub-title">Kasih Project</div>
                   <div className="sub-description">
-                    A non-profit organisation that supports individuals
+                    A non-profit organization that supports individuals
                     regardless of age, disability, religious, or ethnic group.
                   </div>
                   <div className="div-sub-link">
@@ -198,8 +233,8 @@ const Home = () => {
                   </div>
                 </BackSide>
               </Flippy>
-            </Col>
-            <Col>
+            </Col> */}
+            {/* <Col>
               <Flippy flipOnHover={true}>
                 <FrontSide className="front-side">
                   <img
@@ -224,7 +259,7 @@ const Home = () => {
                   </div>
                 </BackSide>
               </Flippy>
-            </Col>
+            </Col> */}
             <Col>
               <Flippy flipOnHover={true}>
                 <FrontSide className="front-side">
@@ -253,18 +288,17 @@ const Home = () => {
             <Col>
               <Flippy flipOnHover={true}>
                 <FrontSide className="front-side">
-                  <img src={AshirAhmedImage} alt="Dr Ashir Ahmed-Logo" />
+                  <img src={JBGRecordsImage} alt="JBG Records-Logo" />
                 </FrontSide>
                 <BackSide className="back-side">
-                  <div className="sub-title">Dr Ashir Ahmed</div>
+                  <div className="sub-title">JBG Records</div>
                   <div className="sub-description">
-                    An academic and researcher, qualifie and trained in the area
-                    of Information Systems.
+                    One-stop service music production located in Surabaya, Indonesia, founded by John Mario as a producer and multi-instrumentalist.
                   </div>
                   <div className="div-sub-link">
                     <Button
                       onClick={() => {
-                        window.open("https://ashirahmed.com", "_blank");
+                        window.open("https://jbgrecords.com", "_blank");
                       }}
                     >
                       Visit Website
