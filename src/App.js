@@ -5,6 +5,7 @@ import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import Projects from "./content/Projects";
 import About from "./content/About";
+import Puzzle from "./content/Puzzle";
 
 const { useEffect, useState } = React;
 
@@ -71,6 +72,11 @@ const App = () => {
                 <Route exact path="/Projects" component={Projects}>
                   <div className="container-content">
                     <Projects />
+                  </div>
+                </Route>
+                <Route exact path="/Puzzle" component={Puzzle}>
+                  <div className="container-content">
+                    <Puzzle />
                   </div>
                 </Route>
               </Switch>

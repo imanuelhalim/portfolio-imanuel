@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // import { FaFacebookSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 // import { FaInstagram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaPuzzlePiece } from "react-icons/fa"
 import { FaGithubSquare } from "react-icons/fa";
-import Puzzle from "../content/Puzzle";
+
 
 const { useEffect, useState } = React;
 
@@ -93,12 +93,13 @@ const Footer = () => {
           />
         </li>
         <li>
-        <Link to="/puzzle">
-          <FaPuzzlePiece
-            size={iconSize}
+        <Link
+            to="/puzzle"
             onClick={() => {
               window.scrollTo(0, 0);
-            }}  
+            }} >
+          <FaPuzzlePiece
+            size={iconSize} 
           />
           </Link>
         </li>

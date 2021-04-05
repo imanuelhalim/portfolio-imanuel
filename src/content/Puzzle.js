@@ -2,7 +2,7 @@ import React from "react";
 
 const Puzzle = () => {
     return(
-        <div className="wrapper-home">
+        <div className="wrapper-projects">
             <h1>Puzzle</h1>
             <div>This page is under construction</div>
         </div>
