@@ -1,0 +1,172 @@
+[
+  {
+    "id": 1,
+    "title": "Swinburne University of Technology",
+    "period": "Mar 2019 - Jun 2019",
+    "logo": "",
+    "position": "Software Developer",
+    "responsibility": [
+      "Acted as a lead developer which responsible in design user interface and a new system from scratch.",
+      "Conducted work in a team of five includes two testers and three developers.",
+      "Planned, designed, and implemented a fully functional payroll spreadsheet interface using VBA.",
+      "Designed and created a user manual to help academic and professional staff using workbook interface."
+    ],
+    "platforms": ["Visual Basic Application", "Macro", "Microsoft Excel"],
+    "projectOutcome": [],
+    "currentProject": false,
+    "collapse": false
+  },
+  {
+    "id": 2,
+    "title": "Student Partnerships",
+    "period": "Aug 2019 - Oct 2019",
+    "logo": "",
+    "position": "Website Analyst and Developer",
+    "responsibility": [
+      "Collaborated in a team that includes project supervisor, project manager, and marketing.",
+      "Assisted in migrating the old website to the new WordPress website.",
+      "Designed a customized website with Customer Relationship Management (CRM) ability, car service booking, shopping online, and payment gateway using WordPress.",
+      "Designed and created a user manual to help clients easily update website contents, pages, and components."
+    ],
+    "platforms": ["WordPress", "HTML", "CSS"],
+    "projectOutcome": [
+      "https://7sautorepair.com.au",
+      "https://nutmeld.com.au",
+      "https://alburnikitchendesign.com.au"
+    ],
+    "currentProject": false,
+    "collapse": false,
+    "click": false
+  },
+  {
+    "id": 3,
+    "title": "Dr Ashir Ahmed",
+    "period": "Oct 2019 - Nov 2019",
+    "logo": "",
+    "position": "Freelance Website Analyst and Developer",
+    "responsibility": [
+      "Conducted analysis of hosting companies and set up a new domain.",
+      "Planned, designed, and implemented a responsive website using HTML, CSS, and WordPress framework.",
+      "Designed a fully functional website with the ability to register training events, publish training events, and show client’s information such as projects list, researches list, and blog."
+    ],
+    "platforms": ["WordPress", "HTML", "CSS"],
+    "projectOutcome": ["https://ashirahmed.com"],
+    "currentProject": false,
+    "collapse": false,
+    "click": false
+  },
+  {
+    "id": 4,
+    "title": "On Demand Checks",
+    "period": "Mar 2020 - May 2020",
+    "logo": "",
+    "position": "Freelance Website Developer",
+    "responsibility": [
+      "Developed an existed website using React JS framework in Visual Studio Code and used S3 bucket as a server.",
+      "Set up routing traffic such as Route53 and CloudFront for the website under Amazon Web Services.",
+      "Conducted several testing cases for the website to ensure all pages, forms, and buttons are working correctly."
+    ],
+    "platforms": [
+      "ReactJs",
+      "HTML",
+      "CSS",
+      "BootStrap",
+      "Amazon Web Services",
+      "Serverless"
+    ],
+    "projectOutcome": ["https://github.com/imanuelhalim/onDemandChecks"],
+    "currentProject": false,
+    "collapse": false
+  },
+  {
+    "id": 5,
+    "title": "PPE2U",
+    "period": "Aug 2020 - Sep 2020",
+    "logo": "",
+    "position": "Freelance Website Developer",
+    "responsibility": [
+      "Design an online shopping website using a WordPress framework.",
+      "Setting up the WooCommerce plugin and payment method on the website."
+    ],
+    "platforms": ["WordPress", "HTML", "CSS"],
+    "projectOutcome": ["https://ppe2u.com.au"],
+    "currentProject": false,
+    "collapse": false
+  },
+  {
+    "id": 6,
+    "title": "Stress Detox Melbourne",
+    "period": "Sep 2020 - Jan 2021",
+    "logo": "",
+    "position": "Freelance Website Developer",
+    "responsibility": [
+      "Develop a website to provide training courses using a WordPress framework.",
+      "Setting up an event plugin for the website so that the website is able to show register form, event date, and payment gateway for customers."
+    ],
+    "platforms": ["WordPress", "HTML", "CSS"],
+    "projectOutcome": ["https://stressdetoxmelb.com.au"],
+    "currentProject": true,
+    "collapse": true
+  },
+  {
+    "id": 7,
+    "title": "Infa Australia",
+    "period": "Nov 2020 - Jan 2021",
+    "logo": "",
+    "position": "Freelance Website Developer",
+    "responsibility": [
+      "Built and designed a responsive website by WordPress to provide services for international students.",
+      "Setup the website with a subscription system and payment gateways such as Stripe and PayPal.",
+      "Customized a form design and various components of the website using CSS and HTML so that all elements can be aligned with the website."
+    ],
+    "platforms": ["WordPress", "HTML", "CSS"],
+    "projectOutcome": ["https://infaaustralia.com.au/"],
+    "currentProject": true,
+    "collapse": true
+  },
+  {
+    "id": 8,
+    "title": "JBG Records",
+    "period": "Dec 2020 - Jan 2021",
+    "logo": "",
+    "position": "Freelance Website Developer",
+    "responsibility": [
+      "Built and designed a customized and responsive website using WordPress for music production."
+    ],
+    "platforms": ["WordPress", "HTML", "CSS"],
+    "projectOutcome": ["https://jbgrecords.com/"],
+    "currentProject": true,
+    "collapse": true
+  },
+  {
+    "id": 9,
+    "title": "Comfort Lilydale",
+    "period": "Jan 2021 - Feb 2021",
+    "logo": "",
+    "position": "Freelance Website Developer",
+    "responsibility": [
+      "Planed and designed a customized website using WordPress for hotel purposes to provide information for guests.",
+      "Adjusted a form design and various components of the website with CSS and HTML."
+    ],
+    "platforms": ["WordPress", "HTML", "CSS"],
+    "projectOutcome": ["https://comfortlilydale.com.au/"],
+    "currentProject": true,
+    "collapse": true
+  },
+  {
+    "id": 10,
+    "title": "Hashtag Coffee Melbourne",
+    "period": "Feb 2021 - Mar 2021",
+    "logo": "",
+    "position": "Freelance Website Developer",
+    "responsibility": [
+      "Re-build a responsive online shopping website and integrate the website with WooCommerce.",
+      "Conduct several testing procedures to make sure all components on the website are working properly.",
+      "Configure the website with payment gateways such as Stripe and Apple Pay."
+    ],
+    "platforms": ["WordPress", "HTML", "CSS"],
+    "projectOutcome": ["https://hashtagcoffee.com.au/"],
+    "currentProject": true,
+    "collapse": true
+  }
+]

@@ -6,7 +6,11 @@ import {
   Nav,
   TabContent,
   TabPane,
+  DropdownButton,
+  Dropdown
 } from "react-bootstrap";
+import Professional from "./Experiences/Professional.json"
+import Volunteering from "./Experiences/Volunteering.json"
 
 const { useEffect, useState } = React;
 
@@ -29,260 +33,106 @@ function useWindowSize() {
 
 const Projects = () => {
   const widthScreenSize = useWindowSize();
+  const [displayContent, setDisplayContent] = useState("View");
 
-  const professional = [
-    {
-      no: 1,
-      title: "Swinburne University of Technology",
-      period: "Mar 2019 - Jun 2019",
-      logo: "",
-      position: "Software Developer",
-      responsibility: [
-        "Acted as a lead developer which responsible in design user interface and a new system from scratch.",
-        "Conducted work in a team of five includes two testers and three developers.",
-        "Planned, designed, and implemented a fully functional payroll spreadsheet interface using VBA.",
-        "Designed and created a user manual to help academic and professional staff using workbook interface.",
-      ],
-      platforms: ["Visual Basic Application", "Macro", "Microsoft Excel"],
-      projectOutcome: [],
-      currentProject: false,
-      collapse: false,
-    },
-    {
-      no: 2,
-      title: "Student Partnerships",
-      period: "Aug 2019 - Oct 2019",
-      logo: "",
-      position: "Website Analyst and Developer",
-      responsibility: [
-        "Collaborated in a team that includes project supervisor, project manager, and marketing.",
-        "Assisted in migrating the old website to the new WordPress website.",
-        "Designed a customised website with Customer Relationship Management (CRM) ability, car service booking, shopping online, and payment gateway using WordPress.",
-        "Designed and created a user manual to help clients easily update website contents, pages, and components.",
-      ],
-      platforms: ["WordPress", "HTML", "CSS"],
-      projectOutcome: [
-        "https://7sautorepair.com.au",
-        "https://nutmeld.com.au",
-        "https://alburnikitchendesign.com.au",
-      ],
-      currentProject: false,
-      collapse: false,
-      click: false,
-    },
-    {
-      no: 3,
-      title: "Dr Ashir Ahmed",
-      period: "Oct 2019 - Nov 2019",
-      logo: "",
-      position: "Freelance Website Analyst and Developer",
-      responsibility: [
-        "Conducted analysis of hosting companies and set up a new domain.",
-        "Planned, designed, and implemented a responsive website using HTML, CSS, and WordPress framework.",
-        "Designed a fully functional website with the ability to register training events, publish training events, and show client’s information such as projects list, researches list, and blog.",
-      ],
-      platforms: ["WordPress", "HTML", "CSS"],
-      projectOutcome: ["https://ashirahmed.com"],
-      currentProject: false,
-      collapse: false,
-      click: false,
-    },
-    {
-      no: 4,
-      title: "On Demand Checks",
-      period: "Mar 2020 - May 2020",
-      logo: "",
-      position: "Freelance Website Developer",
-      responsibility: [
-        "Developed an existed website using React JS framework in Visual Studio Code and used S3 bucket as a server.",
-        "Set up routing traffic such as Route53 and CloudFront for the website under Amazon Web Services.",
-        "Conducted several testing cases for the website to ensure all pages, forms, and buttons are working correctly.",
-      ],
-      platforms: [
-        "ReactJs",
-        "HTML",
-        "CSS",
-        "BootStrap",
-        "Amazon Web Services",
-        "Serverless",
-      ],
-      projectOutcome: ["https://github.com/imanuelhalim/onDemandChecks"],
-      currentProject: false,
-      collapse: false,
-    },
-    {
-      no: 5,
-      title: "PPE2U",
-      period: "Aug 2020 - Sep 2020",
-      logo: "",
-      position: "Freelance Website Developer",
-      responsibility: [
-        "Design an online shopping website using a WordPress framework.",
-        "Setting up the WooCommerce plugin and payment method on the website.",
-      ],
-      platforms: ["WordPress", "HTML", "CSS"],
-      projectOutcome: ["https://ppe2u.com.au"],
-      currentProject: false,
-      collapse: false,
-    },
-    {
-      no: 6,
-      title: "Stress Detox Melbourne",
-      period: "Sep 2020 - Jan 2021",
-      logo: "",
-      position: "Freelance Website Developer",
-      responsibility: [
-        "Develop a website to provide training courses using a WordPress framework.",
-        "Setting up an event plugin for the website so that the website is able to show register form, event date, and payment gateway for customers.",
-      ],
-      platforms: ["WordPress", "HTML", "CSS"],
-      projectOutcome: ["https://stressdetoxmelb.com.au"],
-      currentProject: true,
-      collapse: true,
-    },
-    {
-      no: 7,
-      title: "Infa Australia",
-      period: "Nov 2020 - Jan 2021",
-      logo: "",
-      position: "Freelance Website Developer",
-      responsibility: [
-        "Built and designed a responsive website by WordPress to provide services for international students.",
-        "Setup the website with a subscription system and payment gateways such as Stripe and PayPal.",
-        "Customized a form design and various components of the website using CSS and HTML so that all elements can be aligned with the website.",
-      ],
-      platforms: ["WordPress", "HTML", "CSS"],
-      projectOutcome: ["https://infaaustralia.com.au/"],
-      currentProject: true,
-      collapse: true,
-    },
-    {
-      no: 8,
-      title: "JBG Records",
-      period: "Dec 2020 - Jan 2021",
-      logo: "",
-      position: "Freelance Website Developer",
-      responsibility: [
-        "Built and designed a customized and responsive website using WordPress for music production.",
-      ],
-      platforms: ["WordPress", "HTML", "CSS"],
-      projectOutcome: ["https://jbgrecords.com/"],
-      currentProject: true,
-      collapse: true,
-    },
-    {
-      no: 9,
-      title: "Comfort Lilydale",
-      period: "Jan 2021 - Feb 2021",
-      logo: "",
-      position: "Freelance Website Developer",
-      responsibility: [
-        "Planed and designed a customized website using WordPress for hotel purposes to provide information for guests.",
-        "Adjusted a form design and various components of the website with CSS and HTML.",
-      ],
-      platforms: ["WordPress", "HTML", "CSS"],
-      projectOutcome: ["https://comfortlilydale.com.au/"],
-      currentProject: true,
-      collapse: true,
-    },
-    {
-      no: 10,
-      title: "Hashtag Coffee Melbourne",
-      period: "Feb 2021 - Mar 2021",
-      logo: "",
-      position: "Freelance Website Developer",
-      responsibility: [
-        "Re-build a responsive online shopping website and integrate the website with WooCommerce.",
-        "Conduct several testing procedures to make sure all components on the website are working properly.",
-        "Configure the website with payment gateways such as Stripe and Apple Pay.",
-      ],
-      platforms: ["WordPress", "HTML", "CSS"],
-      projectOutcome: ["https://hashtagcoffee.com.au/"],
-      currentProject: true,
-      collapse: true,
-    },
-  ];
-  const volunteering = [
-    {
-      no: 1,
-      title: "Swinburne University of Technology",
-      period: "Aug 2019 - Oct 2019",
-      logo: "",
-      position: "Software Developer",
-      responsibility: [
-        "Volunteer in extending the previous system of Tutor Preference System (TPS).",
-        "Created new functions in spreadsheets include error checking, data checking, and filtering data using Visual Basic Application (VBA) and conducted testing with different devices and scenarios.",
-        "Planned, designed, and implemented a new user interface and fully functional workbook to collect data from different spreadsheets and export data based on Swinburne payroll classification.",
-      ],
-      platforms: ["Visual Basic Application", "Macro", "Microsoft Excel"],
-      projectOutcome: [],
-      currentProject: false,
-      collapse: false,
-    },
-    {
-      no: 2,
-      title: "Kasih Project",
-      period: "Sept 2020 - Dec 2020",
-      logo: "",
-      position: "Website Developer",
-      responsibility: [
-        "Designed a website using a WordPress framework that is able to provide information and events for people in Victoria, Australia.",
-        "Create a payment system on the website so that users can have a donation through the website.",
-      ],
-      platforms: ["WordPress", "HTML", "CSS"],
-      projectOutcome: ["https://kasihproject.org.au"],
-      currentProject: true,
-      collapse: true,
-    },
-  ];
+  const professionalContent = () => {
+    return (
+      <div className="wrapper-projects-contents">
+        <h2>Professional</h2>
+        {Professional.map((text, value) => {
+          if (Professional.length > 1 && text.id != Professional.length) {
+            return (
+              <div key={text + value} className="projects-contents-container">
+                {positionSection(text)}
+                <div className="spacer" />
+              </div>
+            );
+          } else {
+            return (
+              <div key={text + value} className="projects-contents-container">
+                {positionSection(text)}
+              </div>
+            );
+          }
+        })}
+      </div>
+    );
+  }
 
-  const displayList = (listName) => {
-    if (professional.length != 0 && listName === "Professional") {
-      return (
+  const volunteeringContent = () => {
+    return (
+      <div className="wrapper-projects-contents">
+        <h2>Volunteering</h2>
+        {Volunteering.map((text, value) => {
+          if (Volunteering.length > 1 && text.id != Volunteering.length) {
+            return (
+              <div key={text + value} className="projects-contents-container">
+                {positionSection(text)}
+                <div className="spacer" />
+              </div>
+            );
+          } else {
+            return (
+              <div key={text + value} className="projects-contents-container">
+                {positionSection(text)}
+              </div>
+            );
+          }
+        })}
+      </div>
+    );
+  }
+
+  const recentProjectsContent = () => {
+    return (
+      <>
         <div className="wrapper-projects-contents">
           <h2>Professional</h2>
-          {professional.map((text, value) => {
-            if (professional.length > 1 && text.no != professional.length) {
-              return (
-                <div key={text + value} className="projects-contents-container">
-                  {positionSection(text)}
-                  <div className="spacer" />
-                </div>
-              );
-            } else {
+          {Professional.map((text, value) => {
+            let total_contents = Professional.length / 2
+            if (Professional.length === text.id) {
               return (
                 <div key={text + value} className="projects-contents-container">
                   {positionSection(text)}
                 </div>
               );
             }
+            if (text.id > total_contents ) {
+              return (
+                <div key={text + value} className="projects-contents-container">
+                  {positionSection(text)}
+                  <div className="spacer" />
+                </div>
+              );
+            }
+
           })}
         </div>
-      );
-    } else if (volunteering.length != 0 && listName === "Volunteering") {
-      return (
         <div className="wrapper-projects-contents">
-          <h2>Volunteering</h2>
-          {volunteering.map((text, value) => {
-            if (volunteering.length > 1 && text.no != volunteering.length) {
-              return (
-                <div key={text + value} className="projects-contents-container">
-                  {positionSection(text)}
-                  <div className="spacer" />
-                </div>
-              );
-            } else {
-              return (
-                <div key={text + value} className="projects-contents-container">
-                  {positionSection(text)}
-                </div>
-              );
-            }
-          })}
+            <h2>Volunteering</h2>
+            {Volunteering.map((text, value) => {
+              let total_contents = Volunteering.length / 2
+              if (Volunteering.length === text.id) {
+                return (
+                  <div key={text + value} className="projects-contents-container">
+                    {positionSection(text)}
+                  </div>
+                );
+              }
+              if (text.id > total_contents) {
+                return (
+                  <div key={text + value} className="projects-contents-container">
+                    {positionSection(text)}
+                    <div className="spacer" />
+                  </div>
+                );
+              }
+
+            })}
         </div>
-      );
-    }
-  };
+      </>
+    );
+  }
 
   const handleDisplay = (widthScreenSize, text, section) => {
     if (widthScreenSize <= 600 && section === "first-section") {
@@ -432,11 +282,74 @@ const Projects = () => {
     );
   };
 
+  const displaySelectedContent = () => {
+    console.log(displayContent);
+    if(displayContent === "All Projects" || displayContent === "View") {
+      return (
+        <div>
+          {professionalContent()}
+          {volunteeringContent()}
+        </div>
+      )
+    }
+    if(displayContent === "Professional") {
+      return (
+        <div>
+          {professionalContent()}
+        </div>
+      )
+    }
+    if(displayContent === "Volunteering") {
+      return (
+        <div>
+          {volunteeringContent()}
+        </div>
+      )
+    }
+    if(displayContent === "Recent Projects") {
+      return (
+        <div>
+          {recentProjectsContent()}
+        </div>
+      )
+    }
+  }
+
   return (
     <div className="wrapper-projects">
-      <h1>Projects</h1>
-      {displayList("Professional")}
-      {displayList("Volunteering")}
+      <Row>
+        <Col></Col>
+        <Col><h1>Projects</h1></Col>
+        <Col className="right-column">
+          <DropdownButton
+            title={displayContent}
+          >
+            <Dropdown.Item
+              title="All Projects"
+              onSelect={() => {
+                setDisplayContent("All Projects");
+            }}
+            >All projects</Dropdown.Item>
+            <Dropdown.Item
+              title="All Projects"
+              onSelect={() => {
+                setDisplayContent("Professional");
+            }}
+            >Professional</Dropdown.Item>
+            <Dropdown.Item
+              onSelect={() => {
+                setDisplayContent("Volunteering");
+            }}
+            >Volunteering</Dropdown.Item>
+            <Dropdown.Item
+              onSelect={() => {
+                setDisplayContent("Recent Projects");
+            }}
+            >Recent Projects</Dropdown.Item>
+          </DropdownButton>
+        </Col>
+      </Row>
+      {displaySelectedContent()}
     </div>
   );
 };

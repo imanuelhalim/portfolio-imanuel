@@ -93,12 +93,13 @@ const Footer = () => {
           />
         </li>
         <li>
-        <Link
+        <Link 
             to="/puzzle"
             onClick={() => {
               window.scrollTo(0, 0);
             }} >
           <FaPuzzlePiece
+            style={{color: '#001f38'}}
             size={iconSize} 
           />
           </Link>

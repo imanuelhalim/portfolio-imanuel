@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "title": "Swinburne University of Technology",
+    "period": "Aug 2019 - Oct 2019",
+    "logo": "",
+    "position": "Software Developer",
+    "responsibility": [
+      "Volunteer in extending the previous system of Tutor Preference System (TPS).",
+      "Created new functions in spreadsheets include error checking, data checking, and filtering data using Visual Basic Application (VBA) and conducted testing with different devices and scenarios.",
+      "Planned, designed, and implemented a new user interface and fully functional workbook to collect data from different spreadsheets and export data based on Swinburne payroll classification."
+    ],
+    "platforms": ["Visual Basic Application", "Macro", "Microsoft Excel"],
+    "projectOutcome": [],
+    "currentProject": false,
+    "collapse": false
+  },
+  {
+    "id": 2,
+    "title": "Kasih Project",
+    "period": "Sept 2020 - Dec 2020",
+    "logo": "",
+    "position": "Website Developer",
+    "responsibility": [
+      "Designed a website using a WordPress framework that is able to provide information and events for people in Victoria, Australia.",
+      "Create a payment system on the website so that users can have a donation through the website."
+    ],
+    "platforms": ["WordPress", "HTML", "CSS"],
+    "projectOutcome": ["https://kasihproject.org.au"],
+    "currentProject": true,
+    "collapse": true
+  }
+]
