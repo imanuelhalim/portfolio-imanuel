@@ -10,9 +10,9 @@ import {
 import { GrProjects } from "react-icons/gr";
 import { RiCodeBoxLine } from "react-icons/ri";
 import Flippy, { FrontSide, BackSide } from "react-flippy";
-import HashtagCoffee from "../images/Hashtag-Coffee.webp";
-import InfaAustralia from "../images/Infa-australia.webp";
-import ComfortLilydale from "../images/Comfort Logo.webp";
+import HashtagCoffeeImage from "../images/Hashtag-Coffee.webp";
+import InfaAustraliaImage from "../images/Infa-australia.webp";
+import ComfortLilydaleImage from "../images/Comfort Logo.webp";
 import JBGRecordsImage from "../images/JBG-logo-wide.webp";
 import KasihProjectImage from "../images/Kasih Project Logo.webp";
 import StressDetoxImage from "../images/Stress Detox Melbourne Logo.webp";
@@ -176,19 +176,63 @@ const Home = () => {
     }
   };
 
+  const createRow = () => {
+    return(
+      <div className="projects-box">
+        <Row>
+          {createColumn(KasihProjectImage, "Kasih Project-Logo", "Kasih Project", "A non-profit organization that supports individuals regardless of age, disability, religious, or ethnic group.", "https://kasihproject.org.au")}
+          {createColumn(StressDetoxImage, "Stress Detox Melbourne-Logo", "Stress Detox Melbourne", "Human transformation courses help releasing stress from the inner most layers of human consciousness.", "https://stressdetoxmelb.com.au")}
+          {createColumn(InfaAustraliaImage, "Infa Australia Logo", "Infa Australia", "A business that supports current and prospective international students to complete their studies in Australia by providing services with little or no cost. ", "https://infaaustralia.com.au")}
+        </Row>
+        <Row>
+          {createColumn(JBGRecordsImage, "JBG Records Logo", "JBG Records", "One-stop service music production located in Surabaya, Indonesia, founded by John Mario as a producer and multi-instrumentalist.", "https://jbgrecords.com")}
+          {createColumn(ComfortLilydaleImage, "Comfort Lilydale Logo", "Comfort Lilydale", "The ComfortInn Lilydale is a colonial style property perfectly situated at the gateway to the Yarra Valley.", "https://comfortlilydale.com.au")}
+          {createColumn(HashtagCoffeeImage, "Hashtag Coffee Logo", "Hashtag Coffee", "Hashtag Coffee provides green beans that 100% ethically sourced directly from farmers.", "https://hashtagcoffee.com.au/")}
+        </Row>
+      </div>
+    )
+  }
+
   const createColumn = (imgSrc, imgSrcAlt, subTitle, subDesc, websiteLink) => {
     return(
-    <Col>
-      <Flippy flipOnHover={true}>
-        <FrontSide className="front-side">
-          <img src={imgSrc} alt={imgSrcAlt} />
-        </FrontSide>
-        <BackSide className="back-side">
-          <div className="sub-title">{subTitle}</div>
-          <div className="sub-description">
-            {subDesc}
-          </div>
-          <div className="div-sub-link">
+      <Col>
+        <Flippy flipOnHover={true}>
+          <FrontSide className="front-side">
+            <img src={imgSrc} alt={imgSrcAlt} />
+          </FrontSide>
+          <BackSide className="back-side">
+            <div className="sub-title">{subTitle}</div>
+            <div className="sub-description">
+              {subDesc}
+            </div>
+            <div className="div-sub-link">
+              <Button
+                onClick={() => {
+                  window.open(websiteLink, "_blank");
+                }}
+              >
+                Visit Website
+              </Button>
+            </div>
+          </BackSide>
+        </Flippy>
+      </Col>
+    );
+  }
+
+  const createCard = (srcImg, altName, cardTitle, description, websiteLink) => {
+    return(
+      <div className="projects-box">
+        <Card>
+          <Card.Img
+            src={srcImg}
+            alt={altName}
+          />
+          <Card.Body>
+            <Card.Title>{cardTitle}</Card.Title>
+            <Card.Text>
+              {description}
+            </Card.Text>
             <Button
               onClick={() => {
                 window.open(websiteLink, "_blank");
@@ -196,294 +240,29 @@ const Home = () => {
             >
               Visit Website
             </Button>
-          </div>
-        </BackSide>
-      </Flippy>
-    </Col>
-    );
+          </Card.Body>
+        </Card>
+      </div>
+    )
   }
 
   const handleProjectBox = () => {
     if (widthScreenSize > 768) {
       return (
-        <div className="projects-box">
-          <Row>
-            {createColumn(KasihProjectImage, "Kasih Project-Logo", "Kasih Project", "A non-profit organization that supports individuals regardless of age, disability, religious, or ethnic group.", "https://kasihproject.org.au")}
-            {createColumn(StressDetoxImage, "Stress Detox Melbourne-Logo", "Stress Detox Melbourne", "Human transformation courses help releasing stress from the inner most layers of human consciousness., disability, religious, or ethnic group.", "https://stressdetoxmelb.com.au")}
-            {/* {createColumn(StressDetoxImage, "Stress Detox Melbourne-Logo", "Stress Detox Melbourne", "Human transformation courses help releasing stress from the inner most layers of human consciousness., disability, religious, or ethnic group.", "https://stressdetoxmelb.com.au")} */}
-            {/* <Col>
-              <Flippy flipOnHover={true}>
-                <FrontSide className="front-side">
-                  <img src={KasihProjectImage} alt="Kasih Project-Logo" />
-                </FrontSide>
-                <BackSide className="back-side">
-                  <div className="sub-title">Kasih Project</div>
-                  <div className="sub-description">
-                    A non-profit organization that supports individuals
-                    regardless of age, disability, religious, or ethnic group.
-                  </div>
-                  <div className="div-sub-link">
-                    <Button
-                      onClick={() => {
-                        window.open("https://kasihproject.org.au", "_blank");
-                      }}
-                    >
-                      Visit Website
-                    </Button>
-                  </div>
-                </BackSide>
-              </Flippy>
-            </Col> */}
-            {/* <Col>
-              <Flippy flipOnHover={true}>
-                <FrontSide className="front-side">
-                  <img
-                    src={StressDetoxImage}
-                    alt="Stress Detox Melbourne-Logo"
-                  />
-                </FrontSide>
-                <BackSide className="back-side">
-                  <div className="sub-title">Stress Detox Melbourne</div>
-                  <div className="sub-description">
-                    Human transformation courses help releasing stress from the
-                    inner most layers of human consciousness.
-                  </div>
-                  <div className="div-sub-link">
-                    <Button
-                      onClick={() => {
-                        window.open("https://stressdetoxmelb.com.au", "_blank");
-                      }}
-                    >
-                      Visit Website
-                    </Button>
-                  </div>
-                </BackSide>
-              </Flippy>
-            </Col> */}
-            <Col>
-              <Flippy flipOnHover={true}>
-                <FrontSide className="front-side">
-                  <img src={PPE2UImage} alt="PPE2U-Logo" />
-                </FrontSide>
-                <BackSide className="back-side">
-                  <div className="sub-title">PPE2U</div>
-                  <div className="sub-description">
-                    Helping as many businesses to reopen, Covid safe, and
-                    protecting their employees and customers.
-                  </div>
-                  <div className="div-sub-link">
-                    <Button
-                      onClick={() => {
-                        window.open("https://ppe2u.com.au", "_blank");
-                      }}
-                    >
-                      Visit Website
-                    </Button>
-                  </div>
-                </BackSide>
-              </Flippy>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Flippy flipOnHover={true}>
-                <FrontSide className="front-side">
-                  <img src={JBGRecordsImage} alt="JBG Records-Logo" />
-                </FrontSide>
-                <BackSide className="back-side">
-                  <div className="sub-title">JBG Records</div>
-                  <div className="sub-description">
-                    One-stop service music production located in Surabaya, Indonesia, founded by John Mario as a producer and multi-instrumentalist.
-                  </div>
-                  <div className="div-sub-link">
-                    <Button
-                      onClick={() => {
-                        window.open("https://jbgrecords.com", "_blank");
-                      }}
-                    >
-                      Visit Website
-                    </Button>
-                  </div>
-                </BackSide>
-              </Flippy>
-            </Col>
-            <Col>
-              <Flippy flipOnHover={true}>
-                <FrontSide className="front-side">
-                  <img src={AutoRepairImage} alt="7s Auto Repair-Logo" />
-                </FrontSide>
-                <BackSide className="back-side">
-                  <div className="sub-title">7S Auto Repair</div>
-                  <div className="sub-description">
-                    Independent mechanical workshop with various services, fully
-                    qualified technicians, locally trained, and provides the
-                    highest standard of car service.
-                  </div>
-                  <div className="div-sub-link">
-                    <Button
-                      onClick={() => {
-                        window.open("https://7sautorepair.com.au", "_blank");
-                      }}
-                    >
-                      Visit Website
-                    </Button>
-                  </div>
-                </BackSide>
-              </Flippy>
-            </Col>
-            <Col>
-              <Flippy flipOnHover={true}>
-                <FrontSide className="front-side">
-                  <img src={NutMeldImage} alt="Nut Meld-Logo" />
-                </FrontSide>
-                <BackSide className="back-side">
-                  <div className="sub-title">Nut Meld</div>
-                  <div className="sub-description">
-                    Easy, healthy, and delicious flavoured nut butter recipes,
-                    ways to enjoy them and more.
-                  </div>
-                  <div className="div-sub-link">
-                    <Button
-                      onClick={() => {
-                        window.open("https://nutmeld.com.au", "_blank");
-                      }}
-                    >
-                      Visit Website
-                    </Button>
-                  </div>
-                </BackSide>
-              </Flippy>
-            </Col>
-          </Row>
-        </div>
+        <>
+          {createRow()}
+        </>
       );
     } else if (widthScreenSize <= 768) {
       return (
-        <div className="projects-box">
-          <Card>
-            <Card.Img
-              className="kasihproject"
-              src={KasihProjectImage}
-              alt="Kasih Project-Logo"
-            />
-            <Card.Body>
-              <Card.Title>Kasih Project</Card.Title>
-              <Card.Text>
-                A non-profit organisation that supports individuals regardless
-                of age, disability, religious, or ethnic group.
-              </Card.Text>
-              <Button
-                onClick={() => {
-                  window.open("https://kasihproject.org.au", "_blank");
-                }}
-              >
-                Visit Website
-              </Button>
-            </Card.Body>
-          </Card>
-          <Card>
-            <Card.Img
-              className="stressdetoxmelb"
-              src={StressDetoxImage}
-              alt="Stress Detox Melbourne-Logo"
-            />
-            <Card.Body>
-              <Card.Title>Stress Detox Melbourne</Card.Title>
-              <Card.Text>
-                Human transformation courses help releasing stress from the
-                inner most layers of human consciousness.
-              </Card.Text>
-              <Button
-                onClick={() => {
-                  window.open("https://stressdetoxmelb.com.au", "_blank");
-                }}
-              >
-                Visit Website
-              </Button>
-            </Card.Body>
-          </Card>
-          <Card>
-            <Card.Img className="ppe2u" src={PPE2UImage} alt="PPE2U-Logo" />
-            <Card.Body>
-              <Card.Title>PPE2U</Card.Title>
-              <Card.Text>
-                Helping as many businesses to reopen, Covid safe, and protecting
-                their employees and customers.
-              </Card.Text>
-              <Button
-                onClick={() => {
-                  window.open("https://ppe2u.com.au", "_blank");
-                }}
-              >
-                Visit Website
-              </Button>
-            </Card.Body>
-          </Card>
-          <Card>
-            <Card.Img
-              className="ashirahmed"
-              src={AshirAhmedImage}
-              alt="Dr Ashir Ahmed-Logo"
-            />
-            <Card.Body>
-              <Card.Title>Dr Ashir Ahmed</Card.Title>
-              <Card.Text>
-                An academic and researcher, qualifie and trained in the area of
-                Information Systems.
-              </Card.Text>
-              <Button
-                onClick={() => {
-                  window.open("https://ashirahmed.com", "_blank");
-                }}
-              >
-                Visit Website
-              </Button>
-            </Card.Body>
-          </Card>
-          <Card>
-            <Card.Img
-              className="autorepair"
-              src={AutoRepairImage}
-              alt="7s Auto Repair-Logo"
-            />
-            <Card.Body>
-              <Card.Title>7S Auto Repair</Card.Title>
-              <Card.Text>
-                Independent mechanical workshop with various services, fully
-                qualified technicians, locally trained, and provides the highest
-                standard of car service.
-              </Card.Text>
-              <Button
-                onClick={() => {
-                  window.open("https://7sautorepair.com.au", "_blank");
-                }}
-              >
-                Visit Website
-              </Button>
-            </Card.Body>
-          </Card>
-          <Card>
-            <Card.Img
-              className="nutmeld"
-              src={NutMeldImage}
-              alt="Nut Meld-Logo"
-            />
-            <Card.Body>
-              <Card.Title>Nut Meld</Card.Title>
-              <Card.Text>
-                Easy, healthy, and delicious flavoured nut butter recipes, ways
-                to enjoy them and more.
-              </Card.Text>
-              <Button
-                onClick={() => {
-                  window.open("https://nutmeld.com.au", "_blank");
-                }}
-              >
-                Visit Website
-              </Button>
-            </Card.Body>
-          </Card>
-        </div>
+        <>
+          {createCard(KasihProjectImage, "Kasih Project-Logo", "Kasih Project", "A non-profit organization that supports individuals regardless of age, disability, religious, or ethnic group.", "https://kasihproject.org.au")}
+          {createCard(StressDetoxImage, "Stress Detox Melbourne-Logo", "Stress Detox Melbourne", "Human transformation courses help releasing stress from the inner most layers of human consciousness.", "https://stressdetoxmelb.com.au")}
+          {createCard(InfaAustraliaImage, "Infa Australia Logo", "Infa Australia", "A business that supports current and prospective international students to complete their studies in Australia by providing services with little or no cost. ", "https://infaaustralia.com.au")}
+          {createCard(JBGRecordsImage, "JBG Records Logo", "JBG Records", "One-stop service music production located in Surabaya, Indonesia, founded by John Mario as a producer and multi-instrumentalist.", "https://jbgrecords.com")}
+          {createCard(ComfortLilydaleImage, "Comfort Lilydale Logo", "Comfort Lilydale", "The ComfortInn Lilydale is a colonial style property perfectly situated at the gateway to the Yarra Valley.", "https://comfortlilydale.com.au")}
+          {createCard(HashtagCoffeeImage, "Hashtag Coffee Logo", "Hashtag Coffee", "Hashtag Coffee provides green beans that 100% ethically sourced directly from farmers.", "https://hashtagcoffee.com.au/")}
+        </>  
       );
     }
   };
@@ -513,7 +292,7 @@ const Home = () => {
                 within a group or independently. It was a tough process and
                 challenging since I studied IT at the first time with no
                 background in IT. However, I enjoy those process and have a
-                wllingness to learn to make myself familiar with updated
+                willingness to learn to make myself familiar with updated
                 technology.
               </div>
               <PageLink to="/about">

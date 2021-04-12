@@ -515,47 +515,9 @@ span {
                 margin-top: 30px;
                 text-align: center;
                 border: 1px solid $blueGrey;
-                img.card-img.kasihproject {
-                  height: auto;
-                  max-width: 300px;
-                  display: block;
-                  margin-left: auto;
-                  margin-right: auto;
-                }
-                img.card-img.stressdetoxmelb {
-                  height: auto;
-                  max-width: 300px;
-                  margin-top: 20px;
-                  display: block;
-                  margin-left: auto;
-                  margin-right: auto;
-                }
-                img.card-img.ppe2u {
-                  height: auto;
-                  max-width: 100px;
-                  margin-top: 20px;
-                  display: block;
-                  margin-left: auto;
-                  margin-right: auto;
-                }
-                img.card-img.ashirahmed {
-                  height: auto;
-                  max-width: 250px;
-                  margin-top: 20px;
-                  display: block;
-                  margin-left: auto;
-                  margin-right: auto;
-                }
-                img.card-img.autorepair {
-                  height: 120px;
-                  width: auto;
-                  display: block;
-                  margin-left: auto;
-                  margin-right: auto;
-                }
-                img.card-img.nutmeld {
-                  height: auto;
-                  width: 250px;
+                img.card-img {
+                  max-height: 200px;
+                  max-width: 200px;
                   margin-top: 20px;
                   display: block;
                   margin-left: auto;
