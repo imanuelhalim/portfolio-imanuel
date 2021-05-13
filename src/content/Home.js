@@ -1,27 +1,22 @@
-import React from "react";
-import { Link as PageLink } from "react-router-dom";
+import React from 'react';
+import { Link as PageLink } from 'react-router-dom';
 import {
   FaAngleDoubleRight,
   FaAngleDoubleDown,
   FaRegSmile,
   FaRegSmileWink,
-  FaCoffee,
-} from "react-icons/fa";
-import { GrProjects } from "react-icons/gr";
-import { RiCodeBoxLine } from "react-icons/ri";
-import Flippy, { FrontSide, BackSide } from "react-flippy";
-import HashtagCoffeeImage from "../images/Hashtag-Coffee.webp";
-import InfaAustraliaImage from "../images/Infa-australia.webp";
-import ComfortLilydaleImage from "../images/Comfort Logo.webp";
-import JBGRecordsImage from "../images/JBG-logo-wide.webp";
-import KasihProjectImage from "../images/Kasih Project Logo.webp";
-import StressDetoxImage from "../images/Stress Detox Melbourne Logo.webp";
-import PPE2UImage from "../images/PPE2U Logo.webp";
-import AshirAhmedImage from "../images/Dr Ashir Ahmed Logo.webp";
-import AutoRepairImage from "../images/Auto Repair Logo.webp";
-import NutMeldImage from "../images/NutMeld Logo.webp";
-import { Button, Container, Row, Col, Card } from "react-bootstrap";
-import { Link as SmoothLink } from "react-scroll";
+} from 'react-icons/fa';
+import { GrProjects } from 'react-icons/gr';
+import { RiCodeBoxLine } from 'react-icons/ri';
+import Flippy, { FrontSide, BackSide } from 'react-flippy';
+import HashtagCoffeeImage from '../images/Hashtag-Coffee.webp';
+import InfaAustraliaImage from '../images/Infa-australia.webp';
+import ComfortLilydaleImage from '../images/Comfort Logo.webp';
+import JBGRecordsImage from '../images/JBG-logo-wide.webp';
+import KasihProjectImage from '../images/Kasih Project Logo.webp';
+import StressDetoxImage from '../images/Stress Detox Melbourne Logo.webp';
+import { Button, Container, Row, Col, Card } from 'react-bootstrap';
+import { Link as SmoothLink } from 'react-scroll';
 
 const { useEffect, useState } = React;
 
@@ -32,10 +27,10 @@ function useWindowSize() {
     const handleResize = () => {
       setWindowSize(window.innerWidth);
     };
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -177,24 +172,60 @@ const Home = () => {
   };
 
   const createRow = () => {
-    return(
+    return (
       <div className="projects-box">
         <Row>
-          {createColumn(KasihProjectImage, "Kasih Project-Logo", "Kasih Project", "A non-profit organization that supports individuals regardless of age, disability, religious, or ethnic group.", "https://kasihproject.org.au")}
-          {createColumn(StressDetoxImage, "Stress Detox Melbourne-Logo", "Stress Detox Melbourne", "Human transformation courses help releasing stress from the inner most layers of human consciousness.", "https://stressdetoxmelb.com.au")}
-          {createColumn(InfaAustraliaImage, "Infa Australia Logo", "Infa Australia", "A business that supports current and prospective international students to complete their studies in Australia by providing services with little or no cost. ", "https://infaaustralia.com.au")}
+          {createColumn(
+            KasihProjectImage,
+            'Kasih Project-Logo',
+            'Kasih Project',
+            'A non-profit organization that supports individuals regardless of age, disability, religious, or ethnic group.',
+            'https://kasihproject.org.au'
+          )}
+          {createColumn(
+            StressDetoxImage,
+            'Stress Detox Melbourne-Logo',
+            'Stress Detox Melbourne',
+            'Human transformation courses help releasing stress from the inner most layers of human consciousness.',
+            'https://stressdetoxmelb.com.au'
+          )}
+          {createColumn(
+            InfaAustraliaImage,
+            'Infa Australia Logo',
+            'Infa Australia',
+            'A business that supports current and prospective international students to complete their studies in Australia by providing services with little or no cost. ',
+            'https://infaaustralia.com.au'
+          )}
         </Row>
         <Row>
-          {createColumn(JBGRecordsImage, "JBG Records Logo", "JBG Records", "One-stop service music production located in Surabaya, Indonesia, founded by John Mario as a producer and multi-instrumentalist.", "https://jbgrecords.com")}
-          {createColumn(ComfortLilydaleImage, "Comfort Lilydale Logo", "Comfort Lilydale", "The ComfortInn Lilydale is a colonial style property perfectly situated at the gateway to the Yarra Valley.", "https://comfortlilydale.com.au")}
-          {createColumn(HashtagCoffeeImage, "Hashtag Coffee Logo", "Hashtag Coffee", "Hashtag Coffee provides green beans that 100% ethically sourced directly from farmers.", "https://hashtagcoffee.com.au/")}
+          {createColumn(
+            JBGRecordsImage,
+            'JBG Records Logo',
+            'JBG Records',
+            'One-stop service music production located in Surabaya, Indonesia, founded by John Mario as a producer and multi-instrumentalist.',
+            'https://jbgrecords.com'
+          )}
+          {createColumn(
+            ComfortLilydaleImage,
+            'Comfort Lilydale Logo',
+            'Comfort Lilydale',
+            'The ComfortInn Lilydale is a colonial style property perfectly situated at the gateway to the Yarra Valley.',
+            'https://comfortlilydale.com.au'
+          )}
+          {createColumn(
+            HashtagCoffeeImage,
+            'Hashtag Coffee Logo',
+            'Hashtag Coffee',
+            'Hashtag Coffee provides green beans that 100% ethically sourced directly from farmers.',
+            'https://hashtagcoffee.com.au/'
+          )}
         </Row>
       </div>
-    )
-  }
+    );
+  };
 
   const createColumn = (imgSrc, imgSrcAlt, subTitle, subDesc, websiteLink) => {
-    return(
+    return (
       <Col>
         <Flippy flipOnHover={true}>
           <FrontSide className="front-side">
@@ -202,13 +233,11 @@ const Home = () => {
           </FrontSide>
           <BackSide className="back-side">
             <div className="sub-title">{subTitle}</div>
-            <div className="sub-description">
-              {subDesc}
-            </div>
+            <div className="sub-description">{subDesc}</div>
             <div className="div-sub-link">
               <Button
                 onClick={() => {
-                  window.open(websiteLink, "_blank");
+                  window.open(websiteLink, '_blank');
                 }}
               >
                 Visit Website
@@ -218,24 +247,19 @@ const Home = () => {
         </Flippy>
       </Col>
     );
-  }
+  };
 
   const createCard = (srcImg, altName, cardTitle, description, websiteLink) => {
-    return(
+    return (
       <div className="projects-box">
         <Card>
-          <Card.Img
-            src={srcImg}
-            alt={altName}
-          />
+          <Card.Img src={srcImg} alt={altName} />
           <Card.Body>
             <Card.Title>{cardTitle}</Card.Title>
-            <Card.Text>
-              {description}
-            </Card.Text>
+            <Card.Text>{description}</Card.Text>
             <Button
               onClick={() => {
-                window.open(websiteLink, "_blank");
+                window.open(websiteLink, '_blank');
               }}
             >
               Visit Website
@@ -243,26 +267,58 @@ const Home = () => {
           </Card.Body>
         </Card>
       </div>
-    )
-  }
+    );
+  };
 
   const handleProjectBox = () => {
     if (widthScreenSize > 768) {
-      return (
-        <>
-          {createRow()}
-        </>
-      );
+      return <>{createRow()}</>;
     } else if (widthScreenSize <= 768) {
       return (
         <>
-          {createCard(KasihProjectImage, "Kasih Project-Logo", "Kasih Project", "A non-profit organization that supports individuals regardless of age, disability, religious, or ethnic group.", "https://kasihproject.org.au")}
-          {createCard(StressDetoxImage, "Stress Detox Melbourne-Logo", "Stress Detox Melbourne", "Human transformation courses help releasing stress from the inner most layers of human consciousness.", "https://stressdetoxmelb.com.au")}
-          {createCard(InfaAustraliaImage, "Infa Australia Logo", "Infa Australia", "A business that supports current and prospective international students to complete their studies in Australia by providing services with little or no cost. ", "https://infaaustralia.com.au")}
-          {createCard(JBGRecordsImage, "JBG Records Logo", "JBG Records", "One-stop service music production located in Surabaya, Indonesia, founded by John Mario as a producer and multi-instrumentalist.", "https://jbgrecords.com")}
-          {createCard(ComfortLilydaleImage, "Comfort Lilydale Logo", "Comfort Lilydale", "The ComfortInn Lilydale is a colonial style property perfectly situated at the gateway to the Yarra Valley.", "https://comfortlilydale.com.au")}
-          {createCard(HashtagCoffeeImage, "Hashtag Coffee Logo", "Hashtag Coffee", "Hashtag Coffee provides green beans that 100% ethically sourced directly from farmers.", "https://hashtagcoffee.com.au/")}
-        </>  
+          {createCard(
+            KasihProjectImage,
+            'Kasih Project-Logo',
+            'Kasih Project',
+            'A non-profit organization that supports individuals regardless of age, disability, religious, or ethnic group.',
+            'https://kasihproject.org.au'
+          )}
+          {createCard(
+            StressDetoxImage,
+            'Stress Detox Melbourne-Logo',
+            'Stress Detox Melbourne',
+            'Human transformation courses help releasing stress from the inner most layers of human consciousness.',
+            'https://stressdetoxmelb.com.au'
+          )}
+          {createCard(
+            InfaAustraliaImage,
+            'Infa Australia Logo',
+            'Infa Australia',
+            'A business that supports current and prospective international students to complete their studies in Australia by providing services with little or no cost. ',
+            'https://infaaustralia.com.au'
+          )}
+          {createCard(
+            JBGRecordsImage,
+            'JBG Records Logo',
+            'JBG Records',
+            'One-stop service music production located in Surabaya, Indonesia, founded by John Mario as a producer and multi-instrumentalist.',
+            'https://jbgrecords.com'
+          )}
+          {createCard(
+            ComfortLilydaleImage,
+            'Comfort Lilydale Logo',
+            'Comfort Lilydale',
+            'The ComfortInn Lilydale is a colonial style property perfectly situated at the gateway to the Yarra Valley.',
+            'https://comfortlilydale.com.au'
+          )}
+          {createCard(
+            HashtagCoffeeImage,
+            'Hashtag Coffee Logo',
+            'Hashtag Coffee',
+            'Hashtag Coffee provides green beans that 100% ethically sourced directly from farmers.',
+            'https://hashtagcoffee.com.au/'
+          )}
+        </>
       );
     }
   };

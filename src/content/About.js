@@ -1,5 +1,6 @@
-import React from "react";
-import { Container, Row, Col, ProgressBar } from "react-bootstrap";
+import React from 'react';
+import { Container, Row, Col, ProgressBar } from 'react-bootstrap';
+import Review from './Review/Container';
 
 const { useEffect, useState } = React;
 
@@ -10,10 +11,10 @@ function useWindowSize() {
     const handleResize = () => {
       setWindowSize(window.innerWidth);
     };
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -33,7 +34,7 @@ const About = () => {
               <Col className="about">
                 <div className="about-content-container">
                   <div className="about-content-description">
-                    My journey in IT began in 2019 as a{" "}
+                    My journey in IT began in 2019 as a{' '}
                     <strong>Software Developer</strong> to do a project with
                     Swinburne University of Technology in a team of five to
                     complete one of my subjects in an IT degree. I have been
@@ -71,15 +72,15 @@ const About = () => {
                 <div className="skill-content">
                   <span>WordPress</span>
                   <div>
-                    <ProgressBar animated now={90} label={"90%"} />
+                    <ProgressBar animated now={90} label={'90%'} />
                   </div>
                   <span>HTML</span>
                   <div>
-                    <ProgressBar animated now={90} label={"90%"} />
+                    <ProgressBar animated now={90} label={'90%'} />
                   </div>
                   <span>CSS</span>
                   <div>
-                    <ProgressBar animated now={90} label={"90%"} />
+                    <ProgressBar animated now={90} label={'90%'} />
                   </div>
                   <span>JavaScript</span>
                   <div>
@@ -87,17 +88,17 @@ const About = () => {
                       variant="info"
                       animated
                       now={80}
-                      label={"80%"}
+                      label={'80%'}
                     />
                   </div>
                   <span>PHP</span>
                   <div>
-                    {" "}
+                    {' '}
                     <ProgressBar
                       variant="success"
                       animated
                       now={60}
-                      label={"60%"}
+                      label={'60%'}
                     />
                   </div>
                   <span>ReactJs</span>
@@ -106,7 +107,7 @@ const About = () => {
                       variant="info"
                       animated
                       now={80}
-                      label={"80%"}
+                      label={'80%'}
                     />
                   </div>
                   <span>AWS</span>
@@ -115,7 +116,7 @@ const About = () => {
                       variant="warning"
                       animated
                       now={50}
-                      label={"50%"}
+                      label={'50%'}
                     />
                   </div>
                   <span>Visual Basic Application</span>
@@ -124,17 +125,17 @@ const About = () => {
                       variant="info"
                       animated
                       now={80}
-                      label={"80%"}
+                      label={'80%'}
                     />
                   </div>
                   <span>Java</span>
                   <div>
-                    {" "}
+                    {' '}
                     <ProgressBar
                       variant="success"
                       animated
                       now={60}
-                      label={"60%"}
+                      label={'60%'}
                     />
                   </div>
                 </div>
@@ -151,7 +152,7 @@ const About = () => {
             <Row>
               <div className="about-content-container">
                 <div className="about-content-description">
-                  My journey in IT began in 2019 as a{" "}
+                  My journey in IT began in 2019 as a{' '}
                   <strong>Software Developer</strong> to do a project with
                   Swinburne University of Technology in a team of five to
                   complete one of my subjects in an IT degree. I have been acted
@@ -184,15 +185,15 @@ const About = () => {
                 <div className="skill-content">
                   <span>WordPress</span>
                   <div>
-                    <ProgressBar animated now={90} label={"90%"} />
+                    <ProgressBar animated now={90} label={'90%'} />
                   </div>
                   <span>HTML</span>
                   <div>
-                    <ProgressBar animated now={90} label={"90%"} />
+                    <ProgressBar animated now={90} label={'90%'} />
                   </div>
                   <span>CSS</span>
                   <div>
-                    <ProgressBar animated now={90} label={"90%"} />
+                    <ProgressBar animated now={90} label={'90%'} />
                   </div>
                   <span>JavaScript</span>
                   <div>
@@ -200,17 +201,17 @@ const About = () => {
                       variant="info"
                       animated
                       now={80}
-                      label={"80%"}
+                      label={'80%'}
                     />
                   </div>
                   <span>PHP</span>
                   <div>
-                    {" "}
+                    {' '}
                     <ProgressBar
                       variant="success"
                       animated
                       now={60}
-                      label={"60%"}
+                      label={'60%'}
                     />
                   </div>
                   <span>ReactJs</span>
@@ -219,7 +220,7 @@ const About = () => {
                       variant="info"
                       animated
                       now={80}
-                      label={"80%"}
+                      label={'80%'}
                     />
                   </div>
                   <span>AWS</span>
@@ -228,7 +229,7 @@ const About = () => {
                       variant="warning"
                       animated
                       now={50}
-                      label={"50%"}
+                      label={'50%'}
                     />
                   </div>
                   <span>Visual Basic Application</span>
@@ -237,17 +238,17 @@ const About = () => {
                       variant="info"
                       animated
                       now={80}
-                      label={"80%"}
+                      label={'80%'}
                     />
                   </div>
                   <span>Java</span>
                   <div>
-                    {" "}
+                    {' '}
                     <ProgressBar
                       variant="success"
                       animated
                       now={60}
-                      label={"60%"}
+                      label={'60%'}
                     />
                   </div>
                 </div>
@@ -259,7 +260,12 @@ const About = () => {
     }
   };
 
-  return <>{handleDisplay()}</>;
+  return (
+    <>
+      {handleDisplay()}
+      <Review />
+    </>
+  );
 };
 
 export default About;

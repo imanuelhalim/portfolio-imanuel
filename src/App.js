@@ -1,33 +1,33 @@
-import React, { useRef } from "react";
-import Home from "./content/Home";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./header/Header";
-import Footer from "./footer/Footer";
-import Projects from "./content/Projects";
-import About from "./content/About";
-import Puzzle from "./content/Puzzle";
+import React, { useRef } from 'react';
+import Home from './content/Home';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Header from './header/Header';
+import Footer from './footer/Footer';
+import Projects from './content/Projects';
+import About from './content/About';
+import Puzzle from './content/Puzzle/Puzzle';
 
 const { useEffect, useState } = React;
 
-function useWindowSize() {
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
+// function useWindowSize() {
+//   const [windowSize, setWindowSize] = useState(window.innerWidth);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowSize(window.innerWidth);
-    };
-    window.addEventListener("resize", handleResize);
+//   useEffect(() => {
+//     const handleResize = () => {
+//       setWindowSize(window.innerWidth);
+//     };
+//     window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+//     return () => {
+//       window.removeEventListener("resize", handleResize);
+//     };
+//   }, []);
 
-  return windowSize;
-}
+//   return windowSize;
+// }
 
 const App = () => {
-  const widthScreenSize = useWindowSize();
+  // const widthScreenSize = useWindowSize();
 
   const [isSticky, setSticky] = useState(false);
 
@@ -38,17 +38,17 @@ const App = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", () => handleScroll);
+      window.removeEventListener('scroll', () => handleScroll);
     };
   }, []);
 
   return (
     <Router>
       <div className="App">
-        <div className={`sticky-wrapper${isSticky ? " sticky" : ""}`} ref={ref}>
+        <div className={`sticky-wrapper${isSticky ? ' sticky' : ''}`} ref={ref}>
           <div className="sticky-inner">
             <Header />
             {/* 479 */}

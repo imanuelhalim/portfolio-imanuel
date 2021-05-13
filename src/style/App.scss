@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
 $black: #000000;
 $darkGreyBlue: #161e30;
@@ -14,11 +14,11 @@ $navyBlueSolid: #001f38;
 $navyBlueGradient: linear-gradient(to top, #09203f 0%, #537895 100%);
 $transparent: #aaa;
 
-$header: "Bebas Neue", cursive;
-$title: "Roboto Mono", monospace;
-$sub-title: "Inconsolata", monospace;
-$body-content: "Open-Sans", sans-serif;
-$button: "Source Code Pro", monospace;
+$header: 'Bebas Neue', cursive;
+$title: 'Roboto Mono', monospace;
+$sub-title: 'Inconsolata', monospace;
+$body-content: 'Open-Sans', sans-serif;
+$button: 'Source Code Pro', monospace;
 
 * {
   padding: 0;
@@ -646,7 +646,7 @@ span {
                   font-family: $button;
                 }
                 ul li:before {
-                  content: "\00BB \0020";
+                  content: '\00BB \0020';
                 }
               }
               .skill-content {
@@ -695,7 +695,7 @@ span {
                   text-align: left;
                 }
                 ul li:before {
-                  content: "\00BB \0020";
+                  content: '\00BB \0020';
                 }
               }
               .skill-content {
@@ -718,9 +718,36 @@ span {
             }
           }
         }
+        .wrapper-about-reviews {
+          text-align: center;
+          button.btn.btn-primary {
+            margin: 10px 10px 10px 10px;
+            border: 2px solid $blueGrey;
+            border-radius: 10px;
+            height: 75px;
+            width: 250px;
+            background-color: transparent;
+            color: $blueGrey;
+            font-size: 20px;
+            font-family: $button;
+            transition: 0.5s ease-out;
+            &:hover {
+              background-color: $blueGrey;
+              color: $black;
+              border: 2px solid $brightGrey;
+              svg path {
+                stroke: $black;
+              }
+              svg {
+                height: 30px;
+                width: 30px;
+              }
+            }
+          }
+        }
         .wrapper-projects {
           margin-top: 50px;
-          .right-column{
+          .right-column {
             margin-top: 50px;
             text-align: right;
             button.dropdown-toggle.btn.btn-primary {
@@ -736,7 +763,8 @@ span {
               transition: 0.5s ease-out;
               text-align: center;
             }
-            div.dropdown-menu.show, a.dropdown-item {
+            div.dropdown-menu.show,
+            a.dropdown-item {
               background-color: $blueGrey;
               font-size: 14px;
               font-family: $button;

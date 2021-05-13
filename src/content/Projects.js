@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   TabContainer,
   Row,
@@ -7,10 +7,10 @@ import {
   TabContent,
   TabPane,
   DropdownButton,
-  Dropdown
-} from "react-bootstrap";
-import Professional from "./Experiences/Professional.json"
-import Volunteering from "./Experiences/Volunteering.json"
+  Dropdown,
+} from 'react-bootstrap';
+import Professional from './Experiences/Professional.json';
+import Volunteering from './Experiences/Volunteering.json';
 
 const { useEffect, useState } = React;
 
@@ -21,10 +21,10 @@ function useWindowSize() {
     const handleResize = () => {
       setWindowSize(window.innerWidth);
     };
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -33,14 +33,14 @@ function useWindowSize() {
 
 const Projects = () => {
   const widthScreenSize = useWindowSize();
-  const [displayContent, setDisplayContent] = useState("View");
+  const [displayContent, setDisplayContent] = useState('View');
 
   const professionalContent = () => {
     return (
       <div className="wrapper-projects-contents">
         <h2>Professional</h2>
         {Professional.map((text, value) => {
-          if (Professional.length > 1 && text.id != Professional.length) {
+          if (Professional.length > 1 && text.id !== Professional.length) {
             return (
               <div key={text + value} className="projects-contents-container">
                 {positionSection(text)}
@@ -57,14 +57,14 @@ const Projects = () => {
         })}
       </div>
     );
-  }
+  };
 
   const volunteeringContent = () => {
     return (
       <div className="wrapper-projects-contents">
         <h2>Volunteering</h2>
         {Volunteering.map((text, value) => {
-          if (Volunteering.length > 1 && text.id != Volunteering.length) {
+          if (Volunteering.length > 1 && text.id !== Volunteering.length) {
             return (
               <div key={text + value} className="projects-contents-container">
                 {positionSection(text)}
@@ -81,7 +81,7 @@ const Projects = () => {
         })}
       </div>
     );
-  }
+  };
 
   const recentProjectsContent = () => {
     return (
@@ -89,7 +89,7 @@ const Projects = () => {
         <div className="wrapper-projects-contents">
           <h2>Professional</h2>
           {Professional.map((text, value) => {
-            let total_contents = Professional.length / 2
+            let total_contents = Professional.length / 2;
             if (Professional.length === text.id) {
               return (
                 <div key={text + value} className="projects-contents-container">
@@ -97,7 +97,7 @@ const Projects = () => {
                 </div>
               );
             }
-            if (text.id > total_contents ) {
+            if (text.id > total_contents) {
               return (
                 <div key={text + value} className="projects-contents-container">
                   {positionSection(text)}
@@ -105,37 +105,35 @@ const Projects = () => {
                 </div>
               );
             }
-
           })}
         </div>
         <div className="wrapper-projects-contents">
-            <h2>Volunteering</h2>
-            {Volunteering.map((text, value) => {
-              let total_contents = Volunteering.length / 2
-              if (Volunteering.length === text.id) {
-                return (
-                  <div key={text + value} className="projects-contents-container">
-                    {positionSection(text)}
-                  </div>
-                );
-              }
-              if (text.id > total_contents) {
-                return (
-                  <div key={text + value} className="projects-contents-container">
-                    {positionSection(text)}
-                    <div className="spacer" />
-                  </div>
-                );
-              }
-
-            })}
+          <h2>Volunteering</h2>
+          {Volunteering.map((text, value) => {
+            let total_contents = Volunteering.length / 2;
+            if (Volunteering.length === text.id) {
+              return (
+                <div key={text + value} className="projects-contents-container">
+                  {positionSection(text)}
+                </div>
+              );
+            }
+            if (text.id > total_contents) {
+              return (
+                <div key={text + value} className="projects-contents-container">
+                  {positionSection(text)}
+                  <div className="spacer" />
+                </div>
+              );
+            }
+          })}
         </div>
       </>
     );
-  }
+  };
 
   const handleDisplay = (widthScreenSize, text, section) => {
-    if (widthScreenSize <= 600 && section === "first-section") {
+    if (widthScreenSize <= 600 && section === 'first-section') {
       return (
         <>
           <Row className="sub-title-mobile">
@@ -146,7 +144,7 @@ const Projects = () => {
           </Row>
         </>
       );
-    } else if (widthScreenSize > 600 && section === "first-section") {
+    } else if (widthScreenSize > 600 && section === 'first-section') {
       return (
         <Row className="title-period">
           <Col sm={6}>
@@ -162,7 +160,7 @@ const Projects = () => {
         </Row>
       );
     }
-    if (widthScreenSize > 600 && section === "second-section") {
+    if (widthScreenSize > 600 && section === 'second-section') {
       return (
         <Row>
           <Col sm={3}>
@@ -201,7 +199,7 @@ const Projects = () => {
                       <li
                         key={result}
                         onClick={() => {
-                          window.open(`${result}`, "_blank");
+                          window.open(`${result}`, '_blank');
                         }}
                       >
                         {result}
@@ -214,7 +212,7 @@ const Projects = () => {
           </Col>
         </Row>
       );
-    } else if (widthScreenSize <= 600 && section === "second-section") {
+    } else if (widthScreenSize <= 600 && section === 'second-section') {
       return (
         <Row className="second-section-mobile">
           <Nav variant="pills" className="nav-content-mobile">
@@ -256,7 +254,7 @@ const Projects = () => {
                     <li
                       key={result}
                       onClick={() => {
-                        window.open(`${result}`, "_blank");
+                        window.open(`${result}`, '_blank');
                       }}
                     >
                       {result}
@@ -275,77 +273,72 @@ const Projects = () => {
     return (
       <>
         <TabContainer id="left-tabs-example" defaultActiveKey="first">
-          {handleDisplay(widthScreenSize, text, "first-section")}
-          {handleDisplay(widthScreenSize, text, "second-section")}
+          {handleDisplay(widthScreenSize, text, 'first-section')}
+          {handleDisplay(widthScreenSize, text, 'second-section')}
         </TabContainer>
       </>
     );
   };
 
   const displaySelectedContent = () => {
-    console.log(displayContent);
-    if(displayContent === "All Projects" || displayContent === "View") {
+    if (displayContent === 'All Projects' || displayContent === 'View') {
       return (
         <div>
           {professionalContent()}
           {volunteeringContent()}
         </div>
-      )
+      );
     }
-    if(displayContent === "Professional") {
-      return (
-        <div>
-          {professionalContent()}
-        </div>
-      )
+    if (displayContent === 'Professional') {
+      return <div>{professionalContent()}</div>;
     }
-    if(displayContent === "Volunteering") {
-      return (
-        <div>
-          {volunteeringContent()}
-        </div>
-      )
+    if (displayContent === 'Volunteering') {
+      return <div>{volunteeringContent()}</div>;
     }
-    if(displayContent === "Recent Projects") {
-      return (
-        <div>
-          {recentProjectsContent()}
-        </div>
-      )
+    if (displayContent === 'Recent Projects') {
+      return <div>{recentProjectsContent()}</div>;
     }
-  }
+  };
 
   return (
     <div className="wrapper-projects">
       <Row>
         <Col></Col>
-        <Col><h1>Projects</h1></Col>
+        <Col>
+          <h1>Projects</h1>
+        </Col>
         <Col className="right-column">
-          <DropdownButton
-            title={displayContent}
-          >
+          <DropdownButton title={displayContent}>
             <Dropdown.Item
               title="All Projects"
               onSelect={() => {
-                setDisplayContent("All Projects");
-            }}
-            >All projects</Dropdown.Item>
+                setDisplayContent('All Projects');
+              }}
+            >
+              All projects
+            </Dropdown.Item>
             <Dropdown.Item
               title="All Projects"
               onSelect={() => {
-                setDisplayContent("Professional");
-            }}
-            >Professional</Dropdown.Item>
+                setDisplayContent('Professional');
+              }}
+            >
+              Professional
+            </Dropdown.Item>
             <Dropdown.Item
               onSelect={() => {
-                setDisplayContent("Volunteering");
-            }}
-            >Volunteering</Dropdown.Item>
+                setDisplayContent('Volunteering');
+              }}
+            >
+              Volunteering
+            </Dropdown.Item>
             <Dropdown.Item
               onSelect={() => {
-                setDisplayContent("Recent Projects");
-            }}
-            >Recent Projects</Dropdown.Item>
+                setDisplayContent('Recent Projects');
+              }}
+            >
+              Recent Projects
+            </Dropdown.Item>
           </DropdownButton>
         </Col>
       </Row>

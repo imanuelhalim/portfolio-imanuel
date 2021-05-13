@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import App from "./App";
-import "./style/Loading-Page.scss";
-import "./style/App.scss";
+import React, { useEffect, useState } from 'react';
+import App from './App';
+import './style/Loading-Page.scss';
+import './style/App.scss';
 
 const LoadingPage = () => {
-  const [isLoading, setIsLoading] = useState("true");
+  const [isLoading, setIsLoading] = useState('true');
 
   useEffect(() => {
     setTimeout(() => {
-      setIsLoading("false");
+      setIsLoading('false');
     }, 5900);
     // setTimeout(() => {
     //   setIsLoading("false");
@@ -16,7 +16,7 @@ const LoadingPage = () => {
   }, [isLoading]);
 
   const handleLoading = () => {
-    if (isLoading === "true") {
+    if (isLoading === 'true') {
       return (
         <div className="loading-container">
           <svg
@@ -43,7 +43,7 @@ const LoadingPage = () => {
           </svg>
         </div>
       );
-    } else if (isLoading === "false") {
+    } else if (isLoading === 'false') {
       return <App />;
     }
   };

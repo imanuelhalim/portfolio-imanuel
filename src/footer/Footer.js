@@ -1,12 +1,11 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 // import { FaFacebookSquare } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin } from 'react-icons/fa';
 // import { FaInstagram } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { FaPuzzlePiece } from "react-icons/fa"
-import { FaGithubSquare } from "react-icons/fa";
-
+import { MdEmail } from 'react-icons/md';
+import { FaPuzzlePiece } from 'react-icons/fa';
+import { FaGithubSquare } from 'react-icons/fa';
 
 const { useEffect, useState } = React;
 
@@ -17,10 +16,10 @@ function useWindowSize() {
     const handleResize = () => {
       setWindowSize(window.innerWidth);
     };
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -30,11 +29,11 @@ function useWindowSize() {
 const Footer = () => {
   const [iconSize, setIconSize] = useState(0);
 
-  const email = "imanuelhalim1991@gmail.com";
+  const email = 'imanuelhalim1991@gmail.com';
   // const facebook = "https://facebook.com/halimimanuel/";
-  const github = "https://github.com/imanuelhalim/";
+  const github = 'https://github.com/imanuelhalim/';
   // const instagram = "https://instagram.com/imanuel.halim/";
-  const linkedin = "https://linkedin.com/in/imanuelhalim/";
+  const linkedin = 'https://linkedin.com/in/imanuelhalim/';
 
   const widthScreenSize = useWindowSize();
 
@@ -72,7 +71,7 @@ const Footer = () => {
           <FaGithubSquare
             size={iconSize}
             onClick={() => {
-              window.open(`${github}`, "_blank");
+              window.open(`${github}`, '_blank');
             }}
           />
         </li>
@@ -88,20 +87,18 @@ const Footer = () => {
           <FaLinkedin
             size={iconSize}
             onClick={() => {
-              window.open(`${linkedin}`, "_blank");
+              window.open(`${linkedin}`, '_blank');
             }}
           />
         </li>
         <li>
-        <Link 
+          <Link
             to="/puzzle"
             onClick={() => {
               window.scrollTo(0, 0);
-            }} >
-          <FaPuzzlePiece
-            style={{color: '#001f38'}}
-            size={iconSize} 
-          />
+            }}
+          >
+            <FaPuzzlePiece style={{ color: '#001f38' }} size={iconSize} />
           </Link>
         </li>
       </ul>

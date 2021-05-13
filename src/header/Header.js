@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { withRouter, Link } from "react-router-dom";
-import HeaderLogo from "../images/imanuelhalim-logo.svg";
-import Menu from "./Menu";
-import { animateScroll as scroll } from "react-scroll";
+import React, { useState, useEffect } from 'react';
+import { withRouter, Link } from 'react-router-dom';
+import HeaderLogo from '../images/imanuelhalim-logo.svg';
+import Menu from './Menu';
+import { animateScroll as scroll } from 'react-scroll';
 
 const Header = ({ history }) => {
   // State for menu button
   const [state, setState] = useState({
     initial: false,
     clicked: null,
-    menuName: "Menu",
+    menuName: 'Menu',
   });
 
   // State  for disabled button
@@ -19,7 +19,7 @@ const Header = ({ history }) => {
   useEffect(() => {
     // listen for page changes
     history.listen(() => {
-      setState({ clicked: false, menuName: "Menu" });
+      setState({ clicked: false, menuName: 'Menu' });
     });
   });
 
@@ -30,17 +30,17 @@ const Header = ({ history }) => {
       setState({
         initial: null,
         clicked: true,
-        menuName: "Close",
+        menuName: 'Close',
       });
     } else if (state.clicked === true) {
       setState({
         clicked: !state.clicked,
-        menuName: "Menu",
+        menuName: 'Menu',
       });
     } else if (state.clicked === false) {
       setState({
         clicked: !state.clicked,
-        menuName: "Close",
+        menuName: 'Close',
       });
     }
   };
@@ -54,7 +54,7 @@ const Header = ({ history }) => {
   };
 
   const displayMenuButton = () => {
-    if (state.menuName === "Menu") {
+    if (state.menuName === 'Menu') {
       return (
         <div className="hamburger-open-icon">
           <div className="first-line"></div>
