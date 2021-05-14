@@ -39,7 +39,7 @@ const Footer = () => {
 
   useEffect(() => {
     if (widthScreenSize > 959) {
-      setIconSize(35);
+      setIconSize(26);
     } else if (widthScreenSize >= 768 && widthScreenSize <= 959) {
       setIconSize(22);
     }

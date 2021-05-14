@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from './Form';
+import Form from './ReviewForm';
 import ReviewList from './ReviewList';
 import { Button } from 'react-bootstrap';
 
@@ -40,17 +40,17 @@ export default class Container extends React.Component {
     if (this.state.setForm) {
       return (
         <>
-          <Form
-            className="wrapper-review-form"
-            isFormSet={this.state.setForm}
-          />
-          <Button
-            onClick={() => {
-              this.handleCancelFormDisplay();
-            }}
-          >
-            Cancel
-          </Button>
+          <h1>Review Form</h1>
+          <section className="wrapper-review-form">
+            <Form isFormSet={this.state.setForm} />
+            <Button
+              onClick={() => {
+                this.handleCancelFormDisplay();
+              }}
+            >
+              Review List
+            </Button>
+          </section>
         </>
       );
     }
@@ -66,12 +66,12 @@ export default class Container extends React.Component {
   }
 
   handleCancelFormDisplay() {
-    this.setState((state) => ({
+    this.setState({
       setReview: true,
       setForm: false,
       setLeaveReviewButton: true,
       setCancelReviewForm: true,
-    }));
+    });
   }
 
   render() {

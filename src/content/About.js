@@ -27,7 +27,7 @@ const About = () => {
   const handleDisplay = () => {
     if (widthScreenSize > 959) {
       return (
-        <div className="wrapper-about">
+        <>
           <h1>About</h1>
           <Container fluid>
             <Row>
@@ -42,14 +42,14 @@ const About = () => {
                     (Visual Basic Application) with no clue and experience
                     previously.
                     <br />
-                    Once the project finished successfully, I received more
+                    Once the project has finished successfully, I received more
                     opportunities in volunteering, internships, and freelance
                     projects from various businesses and individuals to build
-                    software or websites.
+                    different kinds of websites.
                     <br /> I enjoy building online products like websites,
                     applications, or anything in between. My objective is always
-                    to create useful outcomes for communities, provide a
-                    responsive, simple, and clean design; and enhance the market
+                    to create useful outcomes for communities which provide a
+                    responsive, simple, and neat design; and enhance the market
                     value of a client's business.
                     <br />
                     There are some technologies that I have been working
@@ -142,11 +142,11 @@ const About = () => {
               </Col>
             </Row>
           </Container>
-        </div>
+        </>
       );
     } else if (widthScreenSize <= 959) {
       return (
-        <div className="wrapper-about">
+        <>
           <h1 className="about-title">About</h1>
           <Container>
             <Row>
@@ -255,16 +255,16 @@ const About = () => {
               </div>
             </Row>
           </Container>
-        </div>
+        </>
       );
     }
   };
 
   return (
-    <>
+    <div className="wrapper-about">
       {handleDisplay()}
       <Review />
-    </>
+    </div>
   );
 };
 

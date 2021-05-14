@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { Carousel } from 'react-bootstrap';
 import firebase from './firebase';
 
 const ReviewList = (props) => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const ref = firebase.firestore().collection('reviews');
+  const database = firebase.firestore().collection('reviews');
 
   function getReviews() {
-    console.log(ref);
     setLoading(true);
-    ref.onSnapshot((querySnapshot) => {
+    database.onSnapshot((querySnapshot) => {
       const items = [];
       querySnapshot.forEach((doc) => {
         items.push({ id: doc.id, ...doc.data() });
@@ -29,21 +29,29 @@ const ReviewList = (props) => {
       return (
         <>
           <h1>What did they say?</h1>
-          {reviews.map((review) => {
-            return (
-              <div key={review.id}>
-                <h3>{review.testimonial}</h3>
-                <p>{review.fullName}</p>
-                <p
-                  onClick={() => {
-                    window.open(`${review.websiteName}`, '_blank');
-                  }}
-                >
-                  {review.websiteName}
-                </p>
-              </div>
-            );
-          })}
+          <Carousel style={{ padding: '50px' }}>
+            {reviews.map((review) => {
+              return (
+                <Carousel.Item key={review.id}>
+                  <section
+                    className="review-list"
+                    style={{ marginLeft: '100px', marginRight: '100px' }}
+                  >
+                    <p className="review-testimonial">{review.testimonial}</p>
+                    <p className="review-full-name">{review.fullName}</p>
+                    <p
+                      className="review-website-add"
+                      onClick={() => {
+                        window.open(`${review.websiteAddress}`, '_blank');
+                      }}
+                    >
+                      {review.websiteAddress}
+                    </p>
+                  </section>
+                </Carousel.Item>
+              );
+            })}
+          </Carousel>
         </>
       );
     }

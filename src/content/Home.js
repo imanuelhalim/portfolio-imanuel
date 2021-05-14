@@ -345,10 +345,10 @@ const Home = () => {
               <div className="about-contents">
                 As an IT developer, I have a high curiosity about updated IT
                 frameworks and technology, keen to learn more, and able to work
-                within a group or independently. It was a tough process and
-                challenging since I studied IT at the first time with no
-                background in IT. However, I enjoy those process and have a
-                willingness to learn to make myself familiar with updated
+                within a group or independently. It was a tough learning process
+                and challenging since I studied IT at the first time with no
+                background in IT. However, I enjoy those progress and have a
+                willingness to learn more to make myself familiar with updated
                 technology.
               </div>
               <PageLink to="/about">
