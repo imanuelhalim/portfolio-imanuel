@@ -91,7 +91,7 @@ const Footer = () => {
             }}
           />
         </li>
-        <li>
+        {/* <li>
           <Link
             to="/puzzle"
             onClick={() => {
@@ -100,7 +100,7 @@ const Footer = () => {
           >
             <FaPuzzlePiece style={{ color: '#001f38' }} size={iconSize} />
           </Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   );

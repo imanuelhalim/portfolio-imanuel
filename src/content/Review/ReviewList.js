@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
-import firebase from './firebase';
+import firebase from '../firebase';
 
 const ReviewList = (props) => {
   const [reviews, setReviews] = useState([]);
@@ -31,25 +31,36 @@ const ReviewList = (props) => {
           <h1>What did they say?</h1>
           <Carousel style={{ padding: '50px' }}>
             {reviews.map((review) => {
-              return (
-                <Carousel.Item key={review.id}>
-                  <section
-                    className="review-list"
-                    style={{ marginLeft: '100px', marginRight: '100px' }}
-                  >
-                    <p className="review-testimonial">{review.testimonial}</p>
-                    <p className="review-full-name">{review.fullName}</p>
-                    <p
-                      className="review-website-add"
-                      onClick={() => {
-                        window.open(`${review.websiteAddress}`, '_blank');
-                      }}
+              if (review.isPublished) {
+                return (
+                  <Carousel.Item key={review.id}>
+                    <section
+                      className="review-list"
+                      style={{ marginLeft: '100px', marginRight: '100px' }}
                     >
-                      {review.websiteAddress}
-                    </p>
-                  </section>
-                </Carousel.Item>
-              );
+                      <p className="review-testimonial">
+                        "{review.testimonial}"
+                      </p>
+                      <p className="review-full-name">{review.fullName}</p>
+                      <p
+                        className="review-website-add"
+                        onClick={() => {
+                          window.open(`${review.websiteAddress}`, '_blank');
+                        }}
+                      >
+                        <button
+                          className="go-to-site-button"
+                          onClick={() => {
+                            window.open(review.websiteAddress, '_blank');
+                          }}
+                        >
+                          Go to Site
+                        </button>
+                      </p>
+                    </section>
+                  </Carousel.Item>
+                );
+              }
             })}
           </Carousel>
         </>

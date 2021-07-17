@@ -23,7 +23,7 @@ export default class Container extends React.Component {
       return (
         <>
           <ReviewList
-            className="wrapper-review-lis"
+            className="wrapper-review-list"
             isReviewSet={this.state.setReview}
           />
           <Button

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Form, Row, Col, Button } from 'react-bootstrap';
-import firebase from './firebase';
+import firebase from '../firebase';
 // import { v4 as uuidv4 } from 'uuid';
 
 const ReviewForm = (props, { onClick }) => {
@@ -10,7 +10,7 @@ const ReviewForm = (props, { onClick }) => {
   const [errorWebsiteAddress, setErrorWebsiteAddress] = useState('');
   const [testimonial, setTestimonial] = useState('');
   const [errorTestimonial, setErrorTestimonial] = useState('');
-  const [isPublished, setIsPublished] = useState(true);
+  const [isPublished, setIsPublished] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
 
   const leftColSize = 3;

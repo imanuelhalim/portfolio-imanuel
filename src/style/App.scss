@@ -746,6 +746,30 @@ span {
               }
             }
           }
+          .go-to-site-button {
+            margin: 10px 10px 10px 10px;
+            border: 2px solid $blueGrey;
+            border-radius: 10px;
+            height: 75px;
+            width: 150px;
+            background-color: transparent;
+            color: $blueGrey;
+            font-size: 16px;
+            font-family: $button;
+            transition: 0.5s ease-out;
+            &:hover {
+              background-color: $blueGrey;
+              color: $black;
+              border: 2px solid $brightGrey;
+              svg path {
+                stroke: $black;
+              }
+              svg {
+                height: 30px;
+                width: 30px;
+              }
+            }
+          }
           section.wrapper-review-form {
             border: 2px solid $brightGrey;
             padding: 30px 20px 30px 20px;
@@ -765,8 +789,30 @@ span {
         }
         .wrapper-projects {
           margin-top: 50px;
+          .header-projects-mobile.row {
+            text-align: center;
+            display: inline;
+          }
+          div.dropdownbutton-mobile.row {
+            text-align: center;
+            display: inline;
+            button.dropdown-toggle.btn.btn-primary {
+              border: 2px solid $blueGrey;
+              border-color: $blueGrey;
+              border-radius: 10px;
+              height: 50px;
+              width: 200px;
+              background-color: transparent;
+              color: $blueGrey;
+              font-size: 14px;
+              font-family: $button;
+              transition: 0.5s ease-out;
+              text-align: center;
+              margin-bottom: 20px;
+            }
+          }
           .right-column {
-            margin-top: 50px;
+            margin-top: 20px;
             text-align: right;
             button.dropdown-toggle.btn.btn-primary {
               border: 2px solid $blueGrey;
