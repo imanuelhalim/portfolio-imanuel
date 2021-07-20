@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import ParticleComponent from './ParticleComponent';
 import Home from './content/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './header/Header';
@@ -47,6 +48,7 @@ const App = () => {
 
   return (
     <Router>
+      {/* <ParticleComponent /> */}
       <div className="App">
         <div className={`sticky-wrapper${isSticky ? ' sticky' : ''}`} ref={ref}>
           <div className="sticky-inner">

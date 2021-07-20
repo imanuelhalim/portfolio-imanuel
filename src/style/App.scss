@@ -35,6 +35,10 @@ body {
   scroll-behavior: smooth;
 }
 
+canvas.tsparticles-canvas-el {
+  z-index: -1;
+}
+
 .sticky-wrapper {
   position: relative;
   height: 4rem;
@@ -45,11 +49,11 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 div {
-  color: #aac1cd;
+  color: $blueGrey;
 }
 
 h1 {
@@ -137,12 +141,11 @@ span {
         padding: 40px 0 0 0;
         .wrapper-home {
           width: 100%;
-          // position will clash with gsap, another way is using display
           .home-section {
             display: block;
             height: 750px;
-            z-index: 0;
-            // background-color: black;
+            ///////////////////////////////////////////////////////////////z-index: 0;
+            // z-index: 0;
             text-align: center;
             .header {
               padding: 220px 0 30px 0;
@@ -781,8 +784,194 @@ span {
               div.review-form-row {
                 margin-bottom: -70px;
               }
+              div.dropdown {
+                button.btn.btn-primary {
+                  margin-top: 0px;
+                  margin-left: 0px;
+                  width: 100%;
+                }
+                .dropdown-menu.show {
+                  width: 100%;
+                }
+              }
               button.btn.btn-primary {
                 margin-top: 50px;
+              }
+            }
+          }
+        }
+        @media only screen and (min-width: 768px) and (max-width: 959px) {
+          .wrapper-about-reviews {
+            text-align: center;
+            .wrapper-review-form {
+            }
+            p {
+              font-size: 14px;
+              margin-left: 50px;
+              margin-right: 50px;
+            }
+            button.btn.btn-primary {
+              margin: 10px 10px 10px 10px;
+              border: 2px solid $blueGrey;
+              border-radius: 10px;
+              height: 75px;
+              width: 180px;
+              background-color: transparent;
+              color: $blueGrey;
+              font-size: 14px;
+              font-family: $button;
+              transition: 0.5s ease-out;
+              &:hover {
+                background-color: $blueGrey;
+                color: $black;
+                border: 2px solid $brightGrey;
+                svg path {
+                  stroke: $black;
+                }
+                svg {
+                  height: 30px;
+                  width: 30px;
+                }
+              }
+            }
+            .go-to-site-button {
+              margin: 10px 10px 10px 10px;
+              border: 2px solid $blueGrey;
+              border-radius: 10px;
+              height: 75px;
+              width: 150px;
+              background-color: transparent;
+              color: $blueGrey;
+              font-size: 16px;
+              font-family: $button;
+              transition: 0.5s ease-out;
+              &:hover {
+                background-color: $blueGrey;
+                color: $black;
+                border: 2px solid $brightGrey;
+                svg path {
+                  stroke: $black;
+                }
+                svg {
+                  height: 30px;
+                  width: 30px;
+                }
+              }
+            }
+            section.wrapper-review-form {
+              border: 2px solid $brightGrey;
+              padding: 30px 20px 30px 20px;
+              margin: 0px 100px 0 100px;
+              border-radius: 10px;
+              form.review-form {
+                font-size: 16px;
+                font-family: $button;
+                div.review-form-row {
+                  margin-bottom: -70px;
+                }
+                div.dropdown {
+                  button.btn.btn-primary {
+                    margin-top: 0px;
+                    margin-left: 0px;
+                    width: 100%;
+                  }
+                }
+                button.btn.btn-primary {
+                  margin-top: 50px;
+                }
+              }
+            }
+          }
+        }
+        @media only screen and (max-width: 767px) {
+          .wrapper-about-reviews {
+            text-align: center;
+            h1 {
+              font-size: 50px;
+            }
+            .wrapper-review-form {
+              .review-form {
+                margin-left: -20px;
+                margin-right: -20px;
+              }
+              label {
+                font-size: 14px;
+              }
+            }
+            p {
+              font-size: 14px;
+              margin-left: -50px;
+              margin-right: -50px;
+            }
+            button.btn.btn-primary {
+              margin: 5px;
+              border: 2px solid $blueGrey;
+              border-radius: 10px;
+              height: 75px;
+              width: 180px;
+              background-color: transparent;
+              color: $blueGrey;
+              font-size: 14px;
+              font-family: $button;
+              transition: 0.5s ease-out;
+              &:hover {
+                background-color: $blueGrey;
+                color: $black;
+                border: 2px solid $brightGrey;
+                svg path {
+                  stroke: $black;
+                }
+                svg {
+                  height: 30px;
+                  width: 30px;
+                }
+              }
+            }
+            .go-to-site-button {
+              margin: 10px 10px 10px 10px;
+              border: 2px solid $blueGrey;
+              border-radius: 10px;
+              height: 60px;
+              width: 150px;
+              background-color: transparent;
+              color: $blueGrey;
+              font-size: 14px;
+              font-family: $button;
+              transition: 0.5s ease-out;
+              &:hover {
+                background-color: $blueGrey;
+                color: $black;
+                border: 2px solid $brightGrey;
+                svg path {
+                  stroke: $black;
+                }
+                svg {
+                  height: 30px;
+                  width: 30px;
+                }
+              }
+            }
+            section.wrapper-review-form {
+              border: 2px solid $brightGrey;
+              padding: 30px 20px 30px 20px;
+              margin: 0px 100px 0 100px;
+              border-radius: 10px;
+              form.review-form {
+                font-size: 20px;
+                font-family: $button;
+                div.review-form-row {
+                  margin-bottom: -70px;
+                }
+                div.dropdown {
+                  button.btn.btn-primary {
+                    margin-top: 0px;
+                    margin-left: 0px;
+                    width: 100%;
+                  }
+                }
+                button.btn.btn-primary {
+                  margin-top: 50px;
+                }
               }
             }
           }
@@ -964,7 +1153,7 @@ span {
       text-align: center;
       padding: 50px 0 50px 0;
       //social-media
-      z-index: 0;
+      z-index: 0; /////////////////////////////////////////////////////////////////
       .footer-content {
         font-size: 15px;
         font-family: $title;
@@ -1025,7 +1214,7 @@ header {
   .inner-header {
     padding-top: 20px;
     position: relative;
-    z-index: 3;
+    z-index: 2;
     height: 100px;
     display: flex;
     justify-content: space-between;
@@ -1182,14 +1371,14 @@ header {
   //hamburger-menu
   .hamburger-menu {
     display: none;
-    z-index: 0;
+    z-index: 10;
     top: 0;
     left: 0;
     right: 0;
     position: fixed;
     height: 100%;
     width: 100%;
-    z-index: 1;
+    z-index: 1; ////z-index: 1
     .menu-secondary-background-color {
       background: $black;
       top: 0;
@@ -1198,7 +1387,7 @@ header {
       position: fixed;
       height: 100%;
       width: 100%;
-      z-index: 1;
+      z-index: 1; ////z-index: 1
     }
     .menu-layer {
       position: relative;
